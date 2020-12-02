@@ -1,0 +1,99 @@
+<!--
+  Generated template for the AddHoroscopeLastCallPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+            <ion-col col-12 no-padding>
+              <div class="upload-heading">
+                  <h2>
+                    <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                    <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">
+                    {{title | translate}}
+                  </h2>
+              </div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+        </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content class="Chart-owner add-horoscope">
+  
+          <ion-grid>
+             <ion-row>
+                   <ion-col col-12>
+                       
+                       <div class="upload-content user-info  Marriage">
+                          <p>{{'Any call or WhatsApp or SMS received' | translate}}</p>
+                           <form action="/action_page.php">
+                             <div class="form-group">
+                               <div class="form-data">
+                                    <label>{{'Date of receipt' | translate}}</label>
+                                    <div class="dob-add">
+                                        <p (click)="selectCalendar(4,1)" *ngIf=!lastCallCalendar.getSelectedDate>{{'Day' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectCalendar(4,1)" *ngIf=lastCallCalendar.getSelectedDate>{{lastCallCalendar?.getSelectedDate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectCalendar(4,2)" *ngIf=!lastCallCalendar.getSelectedMonth>{{'Month' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectCalendar(4,2)" *ngIf=lastCallCalendar.getSelectedMonth>{{lastCallCalendar?.getSelectedMonthName | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectCalendar(4,3)" *ngIf=!lastCallCalendar.getSelectedYear>{{'Year' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectCalendar(4,3)" *ngIf=lastCallCalendar.getSelectedYear>{{lastCallCalendar?.getSelectedYear}} <img src="assets/icon/down-arrow.svg"></p>
+                                    </div>
+                                  
+                               </div>
+                             </div>
+                              <div class="form-group">
+                               <div class="form-data">
+                                    <label>{{'Exact Time of receipt' | translate}}</label>
+                                    <div class="time-add">
+                                        <p (click)="selectTime(4,1)" *ngIf="!callTime.getSelectedHour">{{'HH' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,1)" *ngIf="callTime.getSelectedHour">{{callTime?.getSelectedHour}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,2)" *ngIf="!callTime.getSelectedMin">{{'MM' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,2)" *ngIf="callTime.getSelectedMin">{{callTime?.getSelectedMin}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <!-- <p (click)="selectTime(1,3)" *ngIf="!ownerDobTime.getSelectedSec">00<img src="assets/icon/down-arrow.svg"></p> -->
+                                        <p (click)="selectTime(4,3)" *ngIf="!callTime.getSelectedSec">{{'SS' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,3)" *ngIf="callTime.getSelectedSec">{{callTime?.getSelectedSec}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,4)" *ngIf=!callTime.getSelectedAmPm>{{'AM/PM' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                        <p (click)="selectTime(4,4)" *ngIf=callTime.getSelectedAmPm>{{callTime?.getSelectedAmPm | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                                    </div>
+                                   
+                               </div>
+                             </div>
+                             <div class="form-group">
+                               <div class="form-data">
+                                    <label>{{'Place, State and Country where received' | translate}}</label>
+                                    <input type="text" class="form-control" placeholder="{{'Place, State and Country where received' | translate}}"
+                                    [ngModel]="horoscopeData?.getHCrPlace" (ngModelChange)="horoscopeData.setHCrPlace=$event"  name="place of_last_call">
+                               </div>
+                             </div>
+                           </form>
+                       </div>
+                      
+                       
+                       <div class="form-group" >
+                         <div class="upload-data save-btns upload-data-btns">
+                           <button ion-button (click)="saveProfile('1')">{{'Next' | translate}}</button>
+                           <!-- <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button> -->
+                         </div>
+                       </div>
+                    </ion-col>
+              </ion-row>
+  
+            <!-- <div class="profile-footer">
+               <p><span class="global-img"></span> Headletters... all right reserved</p>
+            </div> -->
+        </ion-grid>
+  
+  
+  </ion-content>
+  <ion-footer class="upload-data-btns" [hidden]=true>
+      <ion-toolbar>
+        <button ion-button (click)="saveProfile('1')">{{'Save' | translate}}</button>
+        <button  ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+      </ion-toolbar>
+    </ion-footer>

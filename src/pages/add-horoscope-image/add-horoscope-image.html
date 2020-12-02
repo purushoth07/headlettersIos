@@ -1,0 +1,80 @@
+<!--
+  Generated template for the AddHoroscopeProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+          <ion-col col-12 no-padding>
+            <div class="upload-heading">
+                <h2>
+                  <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                  <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">
+                  {{title | translate}}
+                </h2>
+            </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+      </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="Chart-owner add-horoscope">
+
+        <ion-grid>
+           <ion-row>
+                 <ion-col col-12>
+                    
+                     <div *ngIf="currentPlatform == 'cordova'" class="upload-content user-info">
+                        <div class="add-profile">
+                            <div class="upload-view" *ngIf="!horoscopeData.getHNativePhoto" (click)="imageClick($event)"  [ngStyle]="{'background-image': 'url('+imageURI+')'}" ></div>
+                            <div class="upload-view" *ngIf="horoscopeData.getHNativePhoto" (click)="imageClick($event)"  [ngStyle]="{'background-image': 'url('+horoscopeData.getHNativePhoto+')'}" ></div>
+                            <!-- <img class="upload-view" (click)="imageClick()"  *ngIf="!horoscopeData.getHNativePhoto" src="assets/icon/profile-pic.svg"  /> -->
+                          
+                             <!-- <img (click)="getImage()" [ngStyle]="{'background-image': 'url('+horoscopeData.getHNativePhoto+')'}"class="img-fluid"> -->
+                             <p>{{'Every horoscope needs to be corrected for exact birth time. Hence, we are gathering important data which will help us in rectifying the birth time accurately as much as possible.' | translate}}</p>
+                          
+                             <!-- <p>{{'Upload picture of horoscope owner' | translate}}</p> -->
+                             <!-- <div *ngIf=!isValidNativePhoto class="error-msg">{{errorNativeImage}}</div> -->
+                          </div>
+                     </div>
+
+                     <div *ngIf="currentPlatform != 'cordova'" class="upload-content user-info">
+                      <div class="add-profile">
+                          <input type='file' (change)="onSelectFile($event)" class="choose-file-hide">
+                          <div class="upload-view" *ngIf="!horoscopeData.getHNativePhoto" [ngStyle]="{'background-image': 'url('+imageURI+')'}" ></div>
+                          <div class="upload-view" *ngIf="horoscopeData.getHNativePhoto" [ngStyle]="{'background-image': 'url('+horoscopeData.getHNativePhoto+')'}" ></div>
+                         
+                           <p>{{'Every horoscope needs to be corrected for exact birth time. Hence, we are gathering important data which will help us in rectifying the birth time accurately as much as possible.' | translate}}</p>
+                        
+                        </div>
+                      </div>
+                    
+                     
+                     <div class="form-group" >
+                       <div class="upload-data save-btns upload-data-btns">
+                         <button ion-button (click)="saveProfile('1')">{{'Next' | translate}}</button>
+                         <!-- <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button> -->
+                       </div>
+                     </div>
+                  </ion-col>
+            </ion-row>
+
+          <!-- <div class="profile-footer">
+             <p><span class="global-img"></span> Headletters... all right reserved</p>
+          </div> -->
+      </ion-grid>
+
+
+</ion-content>
+<ion-footer class="upload-data-btns" [hidden]=true>
+    <ion-toolbar>
+      <button ion-button (click)="saveProfile('1')">{{'Save' | translate}}</button>
+      <button  ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+    </ion-toolbar>
+  </ion-footer>
