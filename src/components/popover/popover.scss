@@ -1,0 +1,66 @@
+popover {
+    .list-md,
+    .list-ios {
+        margin-bottom: 0;
+    }
+
+    .popup-month {
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        max-height: 43%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 10px !important;
+        position: absolute;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+        padding: 18px 20px 0;
+        z-index: 999;
+        background: #fff;
+    }
+
+    .dob-add {
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .dob-add p {
+        width: 40%;
+        margin-right: 11px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 0;
+        color: #444F63;
+        font-size: 16px;
+        padding-top: 4px;
+        opacity: .80;
+        position: relative;
+    }
+    .dob-add p:last-child {
+        margin-right: 0;
+    }
+    .cancel-btns {
+        margin: 20px auto 16px;
+        width: 82%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .cancel-btns button {
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        color: #fff;
+        height: 30px;
+        line-height: 30px;
+        width: 100px;
+        border-radius: 30px;
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+    .dob-add>p > img{
+        width: 17px;
+        position: absolute;
+        right: 0;
+    }
+}
