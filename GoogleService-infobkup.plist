@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>124305365421-bie1cc6ck3v675bv33rk8jirlo8gprgf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.124305365421-bie1cc6ck3v675bv33rk8jirlo8gprgf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDvAPV_T5TYq-AQxPS6hQfI2Vhe4FjY_x0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>124305365421</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.headletters.headletters</string>
+	<key>PROJECT_ID</key>
+	<string>meeheadletters</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meeheadletters.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:124305365421:ios:aa8276e643b8e2ba17a924</string>
+	<key>DATABASE_URL</key>
+	<string>https://meeheadletters.firebaseio.com</string>
+</dict>
+</plist>
