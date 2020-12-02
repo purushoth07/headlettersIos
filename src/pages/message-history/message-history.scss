@@ -1,0 +1,64 @@
+page-message-history {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+
+    // .promise{
+    //     position: relative;
+    //     padding-bottom: 50px;
+    // }
+    // .promise-heading {
+    //     background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    // }
+    // .promise-heading h2 {
+    //     margin: 0;
+    //     color: #fff;
+    //     padding: 20px;
+    //     font-size: 16px;
+    //     -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     text-align: center;
+    //     position: relative;
+    // }
+    // .promise-heading h2 .back-icons {
+    //     position: absolute;
+    //     left: 10px;
+    //     z-index: 99999999;
+    //     width: 22px;
+    //     top: 17px;
+    // }
+    // .promise-heading h2 .home-img {
+    //     width: 30px;
+    //     height: 22px;
+    // }
+    small {
+        white-space: pre-wrap;
+    }
+}

@@ -1,0 +1,137 @@
+
+page-messages {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .ion-toolbar{
+        position: relative;
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+    .Messages{
+        position: relative;
+        padding-bottom: 50px;
+    }
+    .add-img-in {
+        position: absolute;
+        width: 24px;
+        right: 62px;
+        top: 0px;
+    }
+    .upload-data.save-btns.message-btns button.view-history:last-child {
+        margin-right: 0;
+    }
+    
+    .upload-data.save-btns.message-btns button {
+        margin-right: 10px;
+        font-size: 14px;
+        width: 110px;
+        height: 30px;
+        line-height: 30px;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+        text-transform: capitalize;
+    }
+    .message-id p {
+        color: #33334B;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 7px;
+        opacity: .86;
+    }
+    .message-id small {
+        color: #33334B;
+        font-size: 12px;
+        white-space: pre-wrap;
+        opacity: .76;
+    }
+    .message-in{
+        display: flex;
+    }
+    .message-in p:first-child {
+        flex-basis: 120px;
+    }
+    .upload-data.save-btns.message-btns {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 0;
+        position: initial;
+        background: initial;
+    }
+    
+    .message-inner {
+        padding: 0 15px;
+    }
+    .Messages .profile-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .Messages .profile-footer p {
+        margin: 0;
+        padding: 30px 0 20px;
+        text-align: center;
+        color: #444F63;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .Messages .profile-footer p > img {
+        width: 19px;
+        margin-bottom: 4px;
+    }
+
+    .container {
+        width: 100%;
+        /* padding-right: 15px; */
+        /* padding-left: 15px; */
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .message-repeat ion-item{
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .message-repeat ion-item ion-label{
+        margin: 0;
+    }
+    .message-repeat ion-item .item-inner{
+        border-bottom: 0!important;
+    }
+    .bg-color .fab{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f46100) !important;
+        width: 124px;
+        border-radius: 30px;
+        height: 34px;
+    }
+}

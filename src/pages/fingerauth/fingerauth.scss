@@ -1,0 +1,10 @@
+page-fingerauth {
+    .fingerprint-bg{background-image: linear-gradient(to bottom, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);}
+    .fingerprint-container{width:100%;height:600px;margin:0 auto;display: table;text-align: center;color:#fff;}
+	.fingerprint-inner-container{display: table-cell;vertical-align: middle;}
+    .fingerprint-inner-container h2{margin-bottom: 60px;}
+    #ion-diagnostics-toast{display: none;}
+    .header-md::after{display:none!important;}
+    .fingerprint-inner-container img{width:100px;margin-bottom: 60px;}
+    #ion-diagnostics-toast{background: none;}
+}

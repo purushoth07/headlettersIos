@@ -1,0 +1,227 @@
+page-horoscope-services {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .ion-toolbar{
+        position: relative;
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+    .no-chart button {
+        height: 40px;
+        line-height: 40px;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        margin: 10px 5px 10px 0;
+        float: right;
+        outline: none;
+        text-transform: capitalize;
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+        font-size: 14px;
+    }
+   
+    .no-chart-img img {
+        width: 104px;
+        margin: 0 auto;
+        display: block;
+    }
+    .no-chart-img h3 {
+        text-align: center;
+        margin: 0;
+        padding: 30px 0;
+        color: #292C31;
+    }
+    .no-chart-img {
+        height: 400px;
+        display: table;
+        width: 100%;
+    }
+    .no-chat-content {
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+    .no-chart button img {
+        width: 13px;
+        margin-right: 10px;
+        height: 13px;
+    }
+    .Chart-owner .no-chart button{
+        margin: 2px 0 0 0;
+    }
+
+    // .list-details ion-item ion-label {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    .request {
+        display: flex;
+        align-items: flex-start;
+        // white-space: nowrap;
+        // word-break: break-all;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // width: 140px;
+        justify-content: space-between;
+    }
+    .promise-profile .horoscope-bg {
+        min-width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background-color: #ddd;
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+    }
+    .item-md .item-button
+    {
+        width:114px;
+    }
+    // .request {
+    //     display: flex;
+    //     // width: 58%;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+
+    .promise-profile {
+        width: 100%;
+        // float: left;
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    // .request {
+    //     float: left;
+    // }
+
+    .request button
+    {
+        width:114px !important;
+    }
+
+    .gradient-bg
+    {
+        background-image: -webkit-gradient(linear, left top, right top, from(#f2880a), color-stop(#f27901), color-stop(#f26800), color-stop(#f25503), to(#f13f0b));
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+    }
+
+    .profile-list h3 {
+        color: #1E2131;
+        font-size: 16px;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 265px;
+    }
+    .profile-list p {
+        margin: 0;
+        color: #1E2131;
+    }
+    .request button {
+        border-color: #F1830A;
+        border: transparent;
+        border-radius: 30px;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+        font-size: 12px !important;
+        margin-left: 5px;
+        /* padding: 0 12px !important; */
+        text-transform: capitalize;
+        width: 80px;
+        line-height: 30px;
+        height: 30px!important;
+    }
+    .request .change-bg {
+        background: #fff;
+        color: #F1830A;
+        border: 1px solid;
+        border-color: #F1830A;
+    }
+    .request p img {
+        width: 4px;
+    }
+    .request p{
+        padding: 12px;
+    }
+    .profile-list small {
+        font-size: 11px;
+        opacity: .70;
+        color: #1E2131;
+    }
+    .profile-list {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 265px;
+    }
+    // .chart{
+    //     border-radius: 30px;
+    //     width: 80px;
+    //     display: flex;
+    //    overflow: hidden; 
+    // }
+
+    .list-details ion-item .item-inner {
+        padding-right: 0!important;
+    }
+    .list-details ion-label{
+        margin-right: 0;
+    }
+
+    ion-toolbar.sub-header .toolbar-background
+    {
+        background-image: none!important;
+    }
+
+    // ion-toolbar.sub-header
+    // {
+    //     // height: 30px;
+    //     // min-height: 50px!important;
+    //     // padding: 0;
+    // }
+    .no-chart2{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-40%);
+        width: 125px;
+    }
+
+    .no-data-wrapper {
+        width: 100%;
+    }
+    
+}

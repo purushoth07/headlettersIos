@@ -1,0 +1,86 @@
+<!--
+  Generated template for the HoroscopeServicesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <div class="upload-heading">
+                        <h2>
+                            <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                            <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">  {{'Horoscope Services' | translate}}
+                        </h2>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+    <ion-toolbar class="sub-header">
+        <div class="no-chart">
+            <button ion-button (click)='addHoroscopeClick()'><img src="assets/icon/add-horoscope.svg">{{'Add Horoscope'| translate}}</button>
+        </div>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <div *ngIf="nodataLength == '0'">
+        <p style="margin-top:37vh;text-align: center;color:gray">You don't have any Heroscope Services</p>
+      </div>
+
+    <ion-list class="Chart-owner">
+        <ion-grid>
+            <ion-row *ngIf=!showNoData>
+                <ion-col col-12>
+                    <!-- <ion-scroll scrollbar-y="true"> -->
+                    <ion-list class="list-details scroll">
+                        <ion-item no-padding *ngFor="let item of horoscopeList  | sort: {property: 'HNAME', order: order}">
+                            <div class="promise-profile">
+                                <!-- <img src={{item.getHNativePhoto}}> -->
+                                <div class="horoscope-bg" *ngIf="item.getHNativePhoto" [ngStyle]="{'background-image': 'url('+item?.getHNativePhoto+')'}"></div>
+                                <img class="horoscope-bg" *ngIf="!item.getHNativePhoto" src="assets/images/headLetters_logo_new.png"/>
+                                <!-- <div class="horoscope-bg" *ngIf="!item.getHNativePhoto"  [ngStyle]="{'background-image': 'url(../../assets/images/headLetters_logo_new.png)'}"></div> -->
+                                <div class="profile-list">
+                                    <h3>{{item.getHName}}</h3>
+                                    <small>Dob :{{item.getOwnerDobToShow(translate)}}</small>
+                                </div>
+                            </div>
+                            <div class="request">
+                                <button class="gradient-bg" ion-button (click)='promiseClick(item)'>{{'Promise' | translate}}</button>
+                                <button class="gradient-bg" ion-button (click)='requestClick($event,item)'>{{'Requests' | translate}}</button>
+                                <!-- <p (click)='moreMenu($event,item)'><img src="assets/icon/dropdown-img.svg"></p> -->
+                                <button class="gradient-bg" ion-button (click)='moreMenu($event,item)'>{{'Charts' | translate}}</button>
+            
+                            </div>
+                        </ion-item>
+                        
+                        
+                    </ion-list>
+                    <!-- </ion-scroll> -->
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf=showNoData >
+               
+                <div  class="no-data-wrapper">
+                </div>
+                
+            </ion-row>
+           
+        </ion-grid>
+
+        <!-- <div class="profile-footer2">
+                <p><span class="global-img"></span>Headletters... All right reserved</p>
+            </div> -->
+
+    <!-- <img *ngIf=showNoData src="assets/icon/No-charts.svg" class="no-chart2"> -->
+        </ion-list>
+</ion-content>
+
+<!-- <ion-footer>
+    <ion-toolbar>
+      <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+    </ion-toolbar>
+</ion-footer> -->

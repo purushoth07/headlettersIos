@@ -1,0 +1,74 @@
+<!--
+  Generated template for the MessagesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ 
+  <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 no-padding>
+              <div class="upload-heading">
+                  <h2>
+                   {{title | translate}}
+                    <img  (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                    <img  (click)="onHomePressed()"src="assets/icon/home-icon.svg" class="home-img">
+                   <!-- <img (click)='goToAddMessage()' src="assets/icon/add-bg.svg" class="add-img-in"> -->
+                  </h2>
+              </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="Messages">
+   
+  <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list class="message-repeat">
+            <ion-item *ngFor="let item of messageList" >
+                  <div class="message-inner">
+                    <div class="message-id">
+                      <!-- <div class="message-in">
+                          <p>Message ID</p>
+                          <p>: {{item.getMsgMessageId}}</p>
+                      </div> -->
+                      <div class="message-in">
+                          <p>{{'Horoscope Name' | translate}}</p>
+                          <p>: {{item.getHORONAME}}</p>
+                      </div>
+                      <small *ngIf=!item.getAgentMessageToDisplay(noName)>{{'Waiting for Agent to reply' | translate}}</small>
+                      <small *ngIf=item.getAgentMessageToDisplay(noName)>{{item?.getAgentMessageToDisplay(noName)}}</small>
+                   
+                    </div>
+                    <div class="upload-data save-btns message-btns">
+                      <button ion-button (click)="goToReplyMessage(item)">{{'Reply' | translate}}</button>
+                      <button ion-button (click)="alertDeleteMessage(item)">{{'Delete' | translate}}</button>
+                      <button ion-button (click)="viewHistory(item)" class="view-history">{{'View History' | translate}}</button>
+                    </div>
+                  </div>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-fab bottom right class="bg-color" (click)='goToAddMessage()'>
+        <!-- <button ion-fab><ion-icon name="add"></ion-icon></button> -->
+        <button ion-fab><ion-icon name="add"></ion-icon>Add message</button>
+     </ion-fab>
+
+    <!-- <div class="profile-footer">
+      <p><span class="global-img"></span> Headletters... All right reserved</p>
+   </div> -->
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+  </ion-toolbar>
+</ion-footer> -->

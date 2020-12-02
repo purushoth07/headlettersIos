@@ -1,0 +1,69 @@
+<!--
+  Generated template for the FindPlacePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Find Place</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <div #mapElement class="map">
+  </div>
+
+  <ion-item class="input-item" no-lines>
+    <button ion-button (click)="getLocationUsingAddress()" item-right> <ion-icon name="locate" ></ion-icon></button>
+    <ion-input [(ngModel)]="formattedAddress" placeholder="Enter Location"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-icon style="color: #d2d0d0;margin: 15px 10px 0px 0px;font-size: 21px;" name="ios-arrow-down" item-right></ion-icon>
+    <ion-datetime (ionChange)="getTimeStamp()" [(ngModel)]="getDate" displayFormat="DD/MM/YYYY"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Time</ion-label>
+    <ion-icon style="color: #d2d0d0;margin: 15px 10px 0px 0px;font-size: 21px;" name="ios-arrow-down" item-right></ion-icon>
+    <ion-datetime [(ngModel)]="getTime"  displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+  </ion-item> 
+
+  <ion-item class="padding dmslat">
+    <ion-label>Longitude  <span style="position:absolute;right:175px;padding-left:10px;color:#383636">  {{longitude}}</span></ion-label>
+      <ion-input type="tel" maxlength="3" [(ngModel)]="lngD" style="position:absolute;right:125px;"></ion-input>
+    <ion-input type="tel" maxlength="3" [(ngModel)]="lngM" style="position:absolute;right:85px;"></ion-input>
+    <ion-input type="tel" maxlength="3" [(ngModel)]="lngS" style="position:absolute;right:45px;"></ion-input>
+    <ion-select style="position:absolute;right:5px;" interface="popover" [(ngModel)]="lngDirection">
+      <ion-option value="E">E</ion-option>
+      <ion-option value="W">W</ion-option>
+    </ion-select>
+  </ion-item>
+
+    <ion-item class="padding dmslat">
+      <ion-label>Latitude  <span style="position:absolute;right:175px;padding-left:10px;color:#383636">  {{latitude}}</span></ion-label>
+        <ion-input type="tel" maxlength="3" [(ngModel)]="latD" style="position:absolute;right:125px;"></ion-input>
+      <ion-input type="tel" maxlength="3" [(ngModel)]="latM" style="position:absolute;right:85px;"></ion-input>
+      <ion-input type="tel" maxlength="3" [(ngModel)]="latS" style="position:absolute;right:45px;"></ion-input>
+      <ion-select style="position:absolute;right:5px;" interface="popover" [(ngModel)]="latDirection">
+        <ion-option value="N">N</ion-option>
+        <ion-option value="S">S</ion-option>
+      </ion-select>
+    </ion-item>
+ 
+  <ion-item class="padding">
+    <ion-label>Time Zone</ion-label>
+    <ion-input readonly [(ngModel)]='utc_timeoffset'></ion-input>
+  </ion-item>
+
+  <ion-item class="padding">
+    <ion-label>DST (Current date)</ion-label>
+    <ion-input readonly [(ngModel)]="DaylightSavigTime"></ion-input>
+  </ion-item>
+</ion-content>
