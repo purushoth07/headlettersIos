@@ -1,0 +1,88 @@
+<ion-header>
+ 
+  <div class="profile-bg user-profile-edit">
+        <div class="upload-heading edit-profile">
+                <h2>
+                    <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                    <button ion-button (click)="editProfile()" class="home-img">{{'Edit'| translate}}</button>
+                    {{'Profile' | translate}}
+                </h2>
+        </div>
+
+        <div class="profile-logo">
+                <div class="header-layer"></div>
+                    <div class="profile-img" [ngStyle]="{'background-image': 'url('+userProfile?.getUserPhoto+')'}"></div>
+                    <div class="profile-name">
+                        <p>{{userProfile?.getUserName}}</p>
+                    </div>
+        </div>
+
+  </div>
+</ion-header>
+
+<!-- <ion-toolbar>
+        
+  </ion-toolbar>
+ -->
+
+
+<ion-content class="profile-page new-profile">
+       
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12>
+                    <div class="new-history-pro">
+                        <div class="profile-history new-profile-his">
+                            <div class="profile-content">
+                                <p>{{'Email' | translate}}</p>
+                                <!-- <p>Email</p> -->
+                                <span>{{userProfile?.getUserEmail}}</span>
+                            </div>
+                        </div>
+                        <!-- <div class="profile-history new-profile-his">
+                            <div class="profile-content">
+                                <p>Mobile Number</p>
+                                <span>{{userProfile?.getUserMobile}}</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="profile-history new-profile-his new-number">
+                            <div class="profile-content">
+                                <p>{{'Mobile Number'| translate}}</p>
+                                <span>{{userProfile?.getUserMobile}}</span>
+                                <ion-grid class="edit-mobile">
+                                    <ion-row>
+                                        <ion-col col-2 class="cc col-width">
+                                            <span>{{userProfile?.getUserIdd}}</span>
+                                        </ion-col>
+                                        <ion-col col-2 class="m_number">
+                                            <span>{{userProfile?.getUserMobile}}</span>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </div>
+                        </div> -->
+                        <div class="profile-history new-profile-his">
+                            <div class="profile-content">
+                                <p>{{'Language'| translate}}</p>
+                                <span>{{language}}</span>
+                            </div>
+                        </div>
+                        <div >
+                            <div class="delete-btn">
+                              <button ion-button (click)="alertDeleteUserProfile()">{{'Delete Profile' | translate}}</button>
+                              <!-- <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button> -->
+                            </div>
+                          </div>
+                    </div>
+                </ion-col>
+                
+            </ion-row>
+            <!-- <ion-row>
+                <ion-col col-12>
+                    <div class="profile-footer">
+                        <p><span class="global-img"></span>Headletters... All right reserved</p>
+                    </div>
+                </ion-col>
+            </ion-row> -->
+        </ion-grid>
+</ion-content>

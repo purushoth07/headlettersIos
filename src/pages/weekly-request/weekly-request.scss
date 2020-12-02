@@ -1,0 +1,118 @@
+
+page-weekly-request {
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    ion-toolbar{
+        position: relative;
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+
+      .weekly-data {
+        display: flex;
+    }
+    
+    .weekly-data p {
+        color: #33334B;
+        font-size: 16px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        opacity: .86;
+    }
+    .weekly-data > p:first-child{
+        width: 30%;
+    }
+    .weekly-in .upload-data.save-btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+        background: none;
+        position: initial;
+    }
+
+    .weekly-in .upload-data.save-btns button {
+        padding: 8px;
+        width: 40%;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+        text-transform: capitalize;
+        font-size: 14px;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+    }
+    .weekly-page > ion-grid {
+        padding: 0;
+    }
+    .weekly-in{
+        padding: 0 15px;
+    }
+
+    .popover-md .popover-content,.popover-ios .popover-content{
+        width:380px!important;
+        left: 50% !important;
+        transform: translateX(-50%)!important;
+      }
+      .calander-show{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        z-index: 999;
+    }
+    .calander-show ion-calendar{
+        // background-color: #ececec !important;
+        box-shadow: 0 2px 25px rgba(0,0,0,0.5);
+    }
+    .calander-show ion-calendar .toolbar-background{
+        background-image: none !important;
+    }
+
+    .set-date {
+        position: relative;
+        min-width:90px;
+        border-bottom: 1px solid #ddd;
+        margin-left: 4px;
+        padding-right: 20px;
+    }
+
+    .set-date img {
+        position: absolute;
+        width: 17px;
+        right: -4px;
+        top: 0;
+    }
+
+    .gps-note{
+        padding: 0 15px;
+        display: flex;
+    }
+}

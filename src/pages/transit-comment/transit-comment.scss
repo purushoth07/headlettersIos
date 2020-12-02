@@ -1,0 +1,206 @@
+page-transit-comment {
+
+
+        .toolbar-background{
+            background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+            background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+            background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+            background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        }
+        ion-toolbar{
+            position: relative;
+        }
+        .lpadding{
+            padding-left: 0!important;
+        }
+        .rpadding{
+            padding-right: 0!important;
+        }
+        .upload-heading h2{
+            margin: 0;
+            color: #fff;
+            // padding: 20px;
+            font-size: 16px;
+            // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+            // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+            // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+            text-align: center;
+            // position: relative;
+        }
+    
+    
+        .Special-request{
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .request-main {
+            display: flex;
+            width: 100%;
+            margin: 20px 0 10px;
+            justify-content: space-between;
+            padding: 0 15px 20px;
+            border-bottom: 1px solid #ddd;
+            align-items: center;
+        }
+        .request-left {
+            display: flex;
+            align-items: center;
+        }
+        .request-left img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .request-left h1 {
+            margin-bottom: 0;
+            color: #33334B;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .special-in p {
+            margin-bottom: 10px;
+            color: #33334B;
+            font-size: 12px;
+            opacity: .62;
+        }
+        .Special-request .profile-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .Special-request .profile-footer p {
+            margin: 0;
+            padding: 30px 0 20px;
+            text-align: center;
+            color: #444F63;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .Special-request .profile-footer p > img {
+            width: 19px;
+            margin-bottom: 4px;
+        }
+        // .request-left.request-text p {
+        //     width: 85px;
+        //     height: 40px;
+        //     margin-right: 10px;
+        //     margin-bottom: 0;
+        // }
+        .special-in {
+            width: 100%;
+        }
+        .special-in ion-label {
+            font-size: 12px;
+            color: #33334B;
+            font-weight: 600;
+            opacity: .78;
+        }
+        .upload-data.save-btns.request-btn {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .upload-data.save-btns.request-btn button {
+            margin-right: 10px;
+            -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+            text-transform: capitalize;
+            font-size: 14px;
+            padding: 8px;
+            width: 40%;
+            border: 0;
+            border-radius: 30px;
+            color: #fff;
+            font-weight: 600;
+            background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+            background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+            background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+            background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        }
+        .special-inner{
+            border-bottom: 1px solid #ddd !important;
+        }
+        .special-inner .item-inner{
+            border-bottom: 0!important;
+        }
+        .special-inner img {
+            background: #ddd;
+            background-size: cover;
+        }
+        .special-inner ion-label h2{
+            font-size: 16px;
+            color: #33334B;
+            opacity: .86;
+            font-weight: 500;
+        }
+        .special-inner ion-label p{
+            font-size: 12px;
+            opacity: .62;
+            color: #33334B;
+        }
+        .special-in textarea{
+            padding: 5px 8px;
+            margin: 0!important;
+            width: 100%!important;
+        }
+        .special-in ion-textarea{
+            border-radius: 5px!important;
+            border:1px solid #707070;
+            font-size: 12px;  
+            opacity: .62;  
+            // margin-left: 16px;
+            // width: calc(100% - 16px)!important;
+        }
+        .special-in{
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+        .upload-data.save-btns{
+            position: initial;
+            background: transparent;
+        }
+    
+        .weekly-data {
+            display: flex;
+        }
+    
+        .special-in .weekly-data p
+        {
+            color: #33334B;
+            font-size: 16px;
+            font-weight: 700;
+            // width: auto;
+        }
+    .transit-date{
+        width: 25%;
+
+    }
+    .transit-date-value{
+        width: calc(75% - 5px);
+        margin-left: 5px;
+    }
+        .gps-note p {
+            color: #33334B;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    
+        .gps-note{
+            padding: 0 30px;
+            display: flex;
+        }
+        // .special-in .weekly-data p:first-child {
+        //     width: 80px;
+        // }
+        .details p:first-child {
+            color: #33334B;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .bg-color .fab{
+            background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        }
+}

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the TransitCommentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ 
+  <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 no-padding>
+              <div class="upload-heading">
+                  <h2>
+                      {{title | translate}}
+                    <img  (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                    <img  (click)="onHomePressed()"src="assets/icon/home-icon.svg" class="home-img">
+                   <!-- <img (click)='goToAddMessage()' src="assets/icon/add-bg.svg" class="add-img-in"> -->
+                  </h2>
+              </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+      <ion-col col-12>
+          <ion-item class="special-inner">
+              <ion-avatar item-start>
+                  <img *ngIf="horoscopeData?.getHNativePhoto" src="{{horoscopeData?.getHNativePhoto}}">
+                    <img *ngIf="!horoscopeData?.getHNativePhoto" src="assets/images/headLetters_logo_new.png">
+              </ion-avatar>
+              <h2>{{horoscopeData?.getHName}}</h2>
+          </ion-item>
+      </ion-col>
+  </ion-row>
+  <!-- <ion-row col-12 no-padding>
+      <div class="gps-note">
+          <p>{{'Please enable GPS if not getting location.' | translate}} </p>
+      </div>
+
+  </ion-row> -->
+
+  <ion-row>
+      <ion-col col-12>
+          <div class="request-in">
+              <div class="request-left request-text">
+                  <div class="special-in">
+                      <div class="weekly-data">
+                          <p class="transit-date">{{'Start Date' | translate}} </p>
+                          <p class="transit-date-value" *ngIf="transitCommentResponseData && transitCommentResponseData.getTRSDATE"> : {{transitCommentResponseData?.getStartDateToShow(translate)}}</p>
+                          <p class="transit-date-value" *ngIf="!transitCommentResponseData || !transitCommentResponseData.getTRSDATE"> : {{'No date found' | translate}}</p>
+                      </div>
+                      <div class="weekly-data">
+                          <p class="transit-date">{{'End Date' | translate}} </p>
+                          <p class="transit-date-value" *ngIf="transitCommentResponseData && transitCommentResponseData.getTREDATE"> : {{transitCommentResponseData?.getEndDateToShow(translate)}}</p>
+                          <p class="transit-date-value" *ngIf="!transitCommentResponseData || !transitCommentResponseData.getTREDATE"> : {{'No date found' | translate}}</p>
+                        </div>
+                        <div class="weekly-data">
+                            <p class="transit-date">{{'Latitude' | translate}} </p>
+                            <p class="transit-date-value">: {{addTransitRequest?.getLATITUDE}}</p>
+                          </div>
+                          <div class="weekly-data">
+                            <p class="transit-date">{{'Longitude' |translate}}</p>
+                            <p class="transit-date-value">: {{addTransitRequest?.getLONGITUDE}}</p>
+                          </div>
+                          <div class="weekly-data">
+                            <p class="transit-date">{{'Local Time' | translate}}</p>
+                            <p class="transit-date-value">: {{displayTime | translate}}</p>
+                          </div>
+                      <div class="details">
+                        <p>{{'Details' | translate}}:</p>
+                        <p *ngIf="transitCommentResponseData.getTRDETAILS">{{transitCommentResponseData?.getTRDETAILS}}</p>
+                        <p *ngIf="!transitCommentResponseData.getTRDETAILS">{{'No detail found' | translate}}</p>
+                      </div>
+                         
+                     
+                  </div>
+              </div>
+          </div>
+      </ion-col>
+  </ion-row>
+
+  <div class="row">
+      <div class="col-md-12 lpadding rpadding">
+      </div>
+  </div>
+  <!-- <div class="profile-footer">
+          <p><span class="global-img"></span>Headletters... All right reserved</p>
+      </div> -->
+      <ion-fab bottom right class="bg-color" (click)='goToAddTansitRequest()'>
+          <button ion-fab><ion-icon name="add"></ion-icon></button>
+       </ion-fab>
+</ion-content>

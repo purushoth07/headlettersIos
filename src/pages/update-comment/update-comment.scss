@@ -1,0 +1,212 @@
+page-update-comment {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+    .promise{
+        position: relative;
+        padding-bottom: 50px;
+    }
+    // .promise-heading {
+    //     background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    //     background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    // }
+    // .promise-heading h2 {
+    //     margin: 0;
+    //     color: #fff;
+    //     padding: 20px;
+    //     font-size: 16px;
+    //     -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+    //     text-align: center;
+    //     position: relative;
+    // }
+    // .promise-heading h2 .back-icons {
+    //     position: absolute;
+    //     left: 10px;
+    //     z-index: 99999999;
+    //     width: 22px;
+    //     top: 17px;
+    // }
+    // .promise-heading h2 .home-img {
+    //     width: 30px;
+    //     height: 22px;
+    // }
+    // .promise-main {
+    //     display: flex;
+    //     width: 100%;
+    //     margin: 20px 0 10px;
+    //     justify-content: space-between;
+    //     padding: 0 15px 20px;
+    //     border-bottom: 1px solid #ddd;
+    // }
+    .promise-left {
+        display: flex;
+        align-items: center;
+    }
+    .promise-left img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .promise-left p {
+        margin-bottom: 0;
+        color: #33334B;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .upload-data.save-btns.promise-right button {
+        width: 100%;
+        padding: 8px 16px;
+    }
+    .promise-data {
+        display: flex;
+    }
+    .promise-data p:first-child {
+        font-weight: 700;
+    }
+    
+    .promise-data p {
+        color: #33334B;
+        font-size: 16px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    .promise-request .details{
+        color: #33334B;
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    .promise-request {
+        margin-bottom: 20px;
+    }
+    .radio-btns {
+        margin-bottom: 20px;
+    }
+    .upload-data.save-btns.promise-comment {
+        justify-content: initial;
+        background: initial;
+        // margin-bottom: 20px;
+        position: initial;
+    }
+    .upload-data.save-btns.promise-comment button {
+        width: 44%;
+        margin-right: 30px;
+        font-size: 12px;
+    }
+    .upload-data.save-btns.promise-comment button:last-child{
+        margin-right: 0;
+    }
+    .promise-information {
+        padding: 0 15px 0;
+    }
+    p.details + small, p.message-info + small {
+        color: #33334B;
+        font-size: 12px;
+        white-space: pre-wrap;
+    }
+    .upload-data.save-btns.promise-right{
+        position: initial;
+        background:initial;
+        margin-top: 0 !important;
+        width: initial;
+    }
+    .upload-data.save-btns.promise-right button{
+        width: 100%!important;
+    }
+    .radio-btns .form-check-label {
+        font-size: 16px;
+        color: #33334B;
+        font-weight: 700;
+    }
+    .new-promise {
+        display: flex;
+        margin: 20px 0;
+    }
+    .new-promise p:first-child {
+        font-weight: 700;
+    }
+    .new-promise p {
+        color: #33334B;
+        font-size: 16px;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    .promise-list {
+        border: 1px solid #505064;
+        margin-bottom: 15px;
+    }
+    .promise-list p{
+        margin-bottom: 0;
+        color: #33334B;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 0 10px 15px;
+    }
+    p.message-info {
+        color: #33334B;
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    .upload-data.save-btns.promise-comment.new {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .promise .profile-footer {
+        bottom: 0;
+    }
+    .promise {
+        position: relative;
+        padding-bottom:30px;
+        // height: calc(100vh - 120px);
+    }
+    .promise .upload-data.save-btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+    }
+
+    .promise .upload-data.save-btns button {
+        padding: 8px;
+        width: 40%;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+        text-transform: capitalize;
+        font-size: 14px;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+    }
+}

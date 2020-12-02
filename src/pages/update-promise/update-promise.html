@@ -1,0 +1,74 @@
+<!--
+  Generated template for the UpdatePromisePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!-- <div class="row">
+      <div class="col-md-12 ">
+          <div class="promise-heading">
+              <h2>
+                <img (click)="onBackPressed()"  src="assets/icon/arrow_back.svg" class="img-fluid back-icons">
+                <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="img-fluid home-img float-right">
+                Promise
+              </h2>
+          </div>
+      </div>
+  </div>  -->
+
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 no-padding>
+          <div class="upload-heading">
+              <h2>
+                <img (click)="onBackPressed()"  src="assets/icon/arrow_back.svg" class="back-icons">
+                <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">
+                {{'Promise' | translate}}
+              </h2>
+          </div>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="promise new-promise-main">
+
+
+    <ion-grid  padding-horizontal>
+           
+      <ion-row>
+         <ion-col col-12>
+           <div class="new-promise">
+             <p>{{'Horoscope Name' | translate}} :</p>
+             <p>{{promiseData?.getHORONAME}}</p>
+           </div>
+           <!-- <div class="promise-list">
+             <p>List of values</p>
+           </div> -->
+           <div class="new-message">
+             <p class="message-info">{{'Message' | translate}}</p>
+             <!-- <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, libero, tempore. Tenetur voluptate soluta sit libero debitis, nisi voluptatum repudiandae.</small> -->
+             <!-- <ion-textarea placeholder="Type Your message" rows="6" cols="10"></ion-textarea> -->
+            <ion-textarea placeholder="{{'Type Your message' | translate}}"
+            [ngModel]="updatePromiseRequest?.getPmCustomerCom" 
+            (ngModelChange)="updatePromiseRequest.setPmCustomerCom=$event"  name="comment"></ion-textarea>
+           </div>
+           <div class="upload-data save-btns promise-comment new">
+              <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+              <button ion-button (click)="callUpdatePromiseApi()">{{'Save' | translate}}</button>
+           </div>
+         </ion-col>
+       </ion-row>
+      
+       
+    </ion-grid>
+    <!-- <div class="profile-footer2">
+        <p><span class="global-img"></span>Headletters... All right reserved</p>
+      </div> -->
+</ion-content>

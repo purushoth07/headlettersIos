@@ -1,0 +1,25 @@
+page-user-details {
+
+.image {
+     
+    display: inline;
+    margin :0px auto;
+    height:100px;
+    width:100px;
+    overflow:hidden;  
+}
+.outerBorder{
+    height: 120px; 
+     width: 120px; 
+      border-radius: 75px;
+      border: 5px solid #fff;
+       margin :25px  auto;
+        border: 5px solid #fff;
+    box-shadow: 0 0 5px gray;
+    overflow:hidden;
+    text-align:center;
+}
+ion-app.md  .scroll-content{
+	margin:0 !important;
+}
+}
