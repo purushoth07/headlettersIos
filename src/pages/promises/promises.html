@@ -1,0 +1,95 @@
+<!--
+  Generated template for the PromisesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+      <ion-toolbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12 no-padding>
+              <div class="upload-heading">
+                  <h2>
+                    <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                    <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">
+                    {{'Promise' | translate}}
+                  </h2>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="promise">
+        <ion-row>
+          <ion-col col-12>
+            <div class="promise-main">
+                <div class="promise-left">
+                  <div class="upload-view" *ngIf="horoscopeData.getHNativePhoto" [ngStyle]="{'background-image': 'url('+horoscopeData?.getHNativePhoto+')'}" >                              
+                    </div>
+                    <img class="upload-view" *ngIf="!horoscopeData.getHNativePhoto" src="assets/images/headLetters_logo_new.png"/>
+
+                  <p>{{horoscopeData?.getHName}}</p>
+                </div>
+                 <!-- <div class="upload-data save-btns promise-right">
+                   <button>Email Promise</button>
+                 </div> -->
+            </div>
+       </ion-col>
+       </ion-row>
+
+       <ion-row>
+          <ion-col col-12 no-padding>
+              <div class="promise-information" *ngFor="let item of promiseList">
+                <div class="promise-request" padding>
+                    <div class="promise-data">
+                      <p>{{'Prediction No' | translate}}</p>
+                      <p>: {{item?.getPmSeq}}</p>
+                    </div>
+                    <div class="promise-data">
+                      <p>{{'Frequency' | translate}}</p>
+                      <p>: {{item?.getPMFREQUENCY}}</p>
+                    </div>
+                    <div class="promise-data">
+                      <p>{{'Date of prediction' | translate}}</p>
+                      <p>: {{item?.displayDate}}</p>
+                    
+                    </div>
+                    <p class="details">{{'Details' | translate}} :</p>
+                    <small>{{item?.getPmDetails}}</small>
+                  </div>
+                  <div class="radio-btns" radio-group>
+                      <ion-item *ngIf="item.getPmFeedFlag == 'T'" > 
+                        <ion-radio  (ionSelect)="checkFeedFlag(item)" checked={{item.isFeedFlag}}></ion-radio>
+                        <ion-label >{{'True'| translate}}</ion-label>
+                      </ion-item>
+                      <ion-item *ngIf="item.getPmFeedFlag != 'T'" >
+                        <ion-radio ng-checked="True" (ionSelect)="checkFeedFlag(item)" ></ion-radio>
+                        <ion-label >{{'True'| translate}}</ion-label>
+                      </ion-item>
+                      <ion-item *ngIf="item.getPmFeedFlag == 'F'" >
+                        <ion-radio (ionSelect)="unCheckFeedFlag(item)" checked={{!item.isFeedFlag}} ></ion-radio>
+                        <ion-label>{{'False'| translate}}</ion-label>
+                      </ion-item>
+                      <ion-item *ngIf="item.getPmFeedFlag != 'F'">
+                        <ion-radio (ionSelect)="unCheckFeedFlag(item)"></ion-radio>
+                        <ion-label>{{'False'| translate}}</ion-label>
+                      </ion-item>
+                  </div>
+                  <div class="upload-data save-btns predictions-comment">
+                    <button (click)="viewCommentClick(item)">{{'Comment'| translate}}</button>
+                    <button (click)="viewHistory(item)">{{'View Comments'| translate}}</button>
+                  </div>
+              </div>
+          </ion-col>
+         </ion-row>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
