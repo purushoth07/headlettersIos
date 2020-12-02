@@ -1,0 +1,240 @@
+<!--
+  Generated template for the BalanceStatementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="balance-check">
+
+    <!-- <script src="http://code.ionicframework.com/1.1.0/js/ionic.bundle.js"></script> -->
+  <ion-toolbar>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 no-padding>
+          <div class="upload-heading">
+            <h2>
+              <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+              <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img">
+              &nbsp;
+            </h2>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <ion-toolbar class="balance-heading">
+    <ion-grid class="tab-balance">
+      <ion-row>
+        <ion-col col-6 class="active">
+          <!-- <ion-item (click)="statementDialog(1)">{{'Balance' | translate}}</ion-item> -->
+          <ion-item (click)="selectDates(myEvent,1)">{{'Balance' | translate}}</ion-item>
+        </ion-col>
+        <ion-col col-6 class="inactive">
+          <!-- <ion-item (click)="statementDialog(2)">{{'Send Statements' | translate}}</ion-item> -->
+          <ion-item (click)="selectDates(myEvent,2)">{{'Send Statements' | translate}}</ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ur-balance" overflow-scroll="false">
+
+  <!-- <div class="popup-month" *ngIf=showStatementDialog>
+    <div class="dob-add">
+      <p (click)="showStatmentCalendarList(2)" *ngIf=!statementCalendar.getSelectedMonth>{{'Month' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+      <p (click)="showStatmentCalendarList(2)" *ngIf=statementCalendar.getSelectedMonth>{{statementCalendar?.getSelectedMonthName | translate}} <img src="assets/icon/down-arrow.svg"></p>
+      <p (click)="showStatmentCalendarList(3)" *ngIf=!statementCalendar.getSelectedYear>{{'Year' | translate}}<img src="assets/icon/down-arrow.svg"></p>
+      <p (click)="showStatmentCalendarList(3)" *ngIf=statementCalendar.getSelectedYear>{{statementCalendar?.getSelectedYear}} <img src="assets/icon/down-arrow.svg"></p>
+    </div>
+
+    <div class="cancel-btns">
+      <button ion-button color="light" (click)="statementDialog(1)">{{'Cancel' | translate}}</button>
+      <button ion-button color="light" (click)="sendStatement()">{{'Ok' | translate}}</button>
+    </div>
+  </div> -->
+
+  <!-- <ion-grid >
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="check-balance">
+          <div class="balance-in">
+            <img src="assets/icon/Your-Balance.svg" class="img-fluid">
+            <div class="balance-amount">
+              <p>{{'Your Balance' | translate}}</p>
+              <h5><span>{{currencySign}}</span> {{balanceData.getACCOUNTBAL}}</h5>
+            </div>
+          </div>
+          <p>{{'Transactions (last 30 days)' | translate}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <div>
+
+      <ion-list class="charge-balance">
+        <ion-item class="charge" *ngFor="let item of statementList">
+          <ion-avatar item-start>
+            <img src="assets/icon/Charge.svg">
+          </ion-avatar>
+          <h2>{{item?.getNARRATION}}</h2>
+          <p class="date-label"><span>{{item.getdisplayDateToShow(translate)}}</span> {{item.getdisplayTimeToShow(translate)}}</p>
+          <ion-avatar *ngIf=!item.isDebit item-end class="active-charge">
+            <p><span>{{currencySign}}</span>{{item.getTXNAMOUNT}}</p>
+          </ion-avatar>
+          <ion-avatar *ngIf=item.isDebit item-end class="active-charge green">
+            <p><span>{{currencySign}}</span>{{item.getTXNAMOUNT}}</p>
+          </ion-avatar>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+
+
+  </ion-grid> -->
+
+   <ion-grid *ngIf=isCurrentData>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="check-balance">
+          <div class="balance-in">
+            <img src="assets/icon/Your-Balance.svg" class="img-fluid">
+            <div class="balance-amount">
+              <p>{{'Your Balance' | translate}}</p>
+              <h5><span>{{currencySign}}</span> {{mainBalance}}</h5>
+            </div>
+          </div>
+          <div class="topup-wallet">
+            <h3>{{'Topup Wallet'}}</h3>
+            <p>{{'Part payments not allowed. Once paid no refunds are allowed and the paid amount (exclusive of taxes) can be used for headletter services as per the pricing sheet (gie hyperlink for pricing sheet)'| translate}}</p>
+            <ion-item>
+              <ion-input [(ngModel)]="topup_amount" type="number" style="border:0 !important;" placeholder="Enter Amount">{{topup_amount}}</ion-input>
+              <i style="color:gray" class="fa fa-rupee" item-left></i>
+            </ion-item>
+          </div>
+          <div class="recommended">
+            <p>{{'Recommended'}}</p>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="2" (click)="addamount(50)">
+                  <p><i style="color:gray" class="fa fa-rupee" item-left></i>  50</p>
+                </ion-col>
+                <ion-col size="2" (click)="addamount(100)">
+                  <p><i style="color:gray" class="fa fa-rupee" item-left></i> 100</p>
+                </ion-col>
+                <ion-col size="2" (click)="addamount(200)">
+                 <p><i style="color:gray" class="fa fa-rupee" item-left></i> 200</p>
+                </ion-col>
+                <ion-col size="4">
+                 </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+          <ion-list style="margin-top:10px" radio-group [(ngModel)]="payment_method">
+            <ion-item>
+              <ion-radio item-left value="razor" checked></ion-radio>
+              <ion-label><img style="width:100px" src="../../assets/icon/razorpay.svg"/></ion-label>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-radio item-left value="paypal"></ion-radio>
+              <ion-label><img style="width:100px;margin-top:0px;" src="../../assets/icon/paypal.svg"/></ion-label>
+            </ion-item> -->
+          </ion-list>
+          <!-- <p>{{'Transactions (current month)' | translate}}</p> -->
+        </div>
+      </ion-col>
+    </ion-row>
+    <div>
+      <ion-list class="charge-balance">
+        <ion-item class="charge" *ngFor="let item of currentStatementList">
+          <ion-avatar item-start>
+            <img src="assets/icon/Charge.svg">
+          </ion-avatar>
+          <h2 *ngIf=!item.getNARRATION>{{'No Description Found' | translate}}</h2>
+          <h2 *ngIf=item.getNARRATION>{{item?.getNARRATION}}</h2>
+          <p class="date-label"><span>{{item?.getdisplayDateToShow(translate,platform)}}</span> {{item?.getdisplayTimeToShow(translate,platform)}}</p>
+          <ion-avatar *ngIf=!item.isDebit item-end class="active-charge">
+            <p><span>{{item?.getCurrencySign}} </span>{{item?.getTXNAMOUNT}}</p>
+          </ion-avatar>
+          <ion-avatar *ngIf=item.isDebit item-end class="active-charge green">
+            <p><span>{{item?.getCurrencySign}} </span>{{item?.getTXNAMOUNT}}</p>
+          </ion-avatar>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+
+
+  </ion-grid> 
+
+  <ion-grid *ngIf=!isCurrentData>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="check-balance">
+          <div class="balance-in">
+            <img src="assets/icon/Your-Balance.svg" class="img-fluid">
+            <div class="balance-amount">
+              <p>{{'Your Balance' | translate}}</p>
+              <h5><span>{{currencySign}}</span> {{mainBalance}}</h5>
+            </div>
+          </div>
+          <p>{{'Transactions (current month)' | translate}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <div>
+
+      <ion-list class="charge-balance">
+        <ion-item class="charge" *ngFor="let item of oldStatementList">
+          <ion-avatar item-start>
+            <img src="assets/icon/Charge.svg">
+          </ion-avatar>
+          <h2>{{item?.getNARRATION}}</h2>
+          <p class="date-label"><span>{{item?.getdisplayDateToShow(translate)}}</span> {{item?.getdisplayTimeToShow(translate)}}</p>
+          <ion-avatar *ngIf=!item.isDebit item-end class="active-charge">
+            <p><span>{{item?.getCurrencySign}}</span>{{item?.getHTXNAMOUNT}}</p>
+          </ion-avatar>
+          <ion-avatar *ngIf=item.isDebit item-end class="active-charge green">
+            <p><span>{{item?.getCurrencySign}}</span>{{item?.getHTXNAMOUNT}}</p>
+          </ion-avatar>
+        </ion-item>
+      </ion-list>
+
+    </div>
+
+
+
+  </ion-grid>
+
+  
+  <!-- <div class="profile-footer2">
+      <p><span class="global-img"></span>Headletters... All right reserved</p>
+    </div> -->
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer *ngIf="!topup_amount" style="height: 55px;background: #afafaf;">
+  <h2 style="color: #fff;margin: 12px 0px 0px 0px;">Topup Balance</h2>
+</ion-footer>
+
+<ion-footer *ngIf="topup_amount" (click)="addbalance()">
+  <ion-toolbar style="background-image:gray !important;">
+    <h2 style="color:#fff">Topup Balance</h2>
+  </ion-toolbar>
+</ion-footer>

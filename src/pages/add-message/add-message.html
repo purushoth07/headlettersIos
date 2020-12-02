@@ -1,0 +1,69 @@
+<!--
+  Generated template for the AddmessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <div class="upload-heading">
+                        <h2>
+                          <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="img-fluid back-icons">
+                          <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="img-fluid home-img float-right">
+                          {{title | translate}}
+                      </h2>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <div class="promise new-promise-main">
+        <div class="container">
+             <div class="row">
+                <div class="col-md-12" style="padding-left: 10px;">
+                  <div class="new-promise">
+                    <p>{{'Horoscope Name' | translate}} :</p>
+                    <!-- <p *ngIf=!hName >Select Horoscope</p> -->
+                    <p *ngIf=hName >{{hName}}</p>
+                    <!-- <p>{{messageRequest.getMsgHId}}</p> -->
+                  </div>
+                  <div *ngIf=isAddHoroscope class="promise-list" >
+                    <img src="assets/icon/down-arrow.svg">
+                    <p *ngIf=!hName (click)="requestClick()">{{'Select Horoscope' | translate}}</p>
+                    <p *ngIf=hName (click)="requestClick()">{{hName}}</p>
+                  </div>
+                  <div class="new-message">
+                    <p class="message-info">{{'Message' | translate}}</p>
+                    <!-- <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, libero, tempore. Tenetur voluptate soluta sit libero debitis, nisi voluptatum repudiandae.</small> -->
+                    
+                  <textarea [ngModel]="messageRequest?.getMsgCustomerCom" 
+                  (ngModelChange)="messageRequest.setMsgCustomerCom=$event"  
+                  name="message" class="form-control" placeholder="{{'Type Your message' | translate}}" 
+                  rows="6" cols="10"></textarea>
+                    
+                    <!-- <textarea (ngModelChange)="messageRequest.setMsgCustomerCom=$event"  name="message" class="form-control" placeholder="Type Your message" rows="6" cols="10"></textarea> -->
+                  </div>
+                  <div class="upload-data save-btns promise-comment new">
+                   <button (click)="onBackPressed()">{{'Cancel'| translate}}</button>
+                   <button (click)="addMessageApi()">{{'Save' | translate}}</button>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="profile-footer2">
+                 <p><span class="global-img"></span>Headletters... All right reserved</p>
+              </div> -->
+        </div>
+    </div>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+  </ion-toolbar>
+</ion-footer> -->

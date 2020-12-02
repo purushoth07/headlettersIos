@@ -1,0 +1,128 @@
+<!--
+  Generated template for the DailyRequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  
+
+    <ion-toolbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12 no-padding>
+                <div class="upload-heading">
+                    <h2>
+                        <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="img-fluid back-icons">
+                        <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="img-fluid home-img float-right">
+                        {{'Daily Request' | translate}}
+                    </h2>
+                </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content padding >
+    
+    <div class="weekly-page">
+        <ion-grid>
+          <!-- <ion-row col-12 no-padding>
+            <div class="gps-note">
+                <p>{{'Please enable GPS if not getting location.' | translate}} </p>
+            </div>
+             
+          </ion-row> -->
+          <ion-row> 
+            <ion-col col-12 no-padding>
+                    <div class="weekly-in">
+                        <div class="weekly-content">
+                           
+                          <div class="weekly-data">
+                            <p>{{'Latitude' | translate}} </p>
+                            <p>: {{addDailyRequest?.getLATITUDE}}</p>
+                          </div>
+                          <div class="weekly-data">
+                            <p>{{'Longitude' |translate}}</p>
+                            <p>: {{addDailyRequest?.getLONGITUDE}}</p>
+                          </div>
+                          <!-- <div class="weekly-data">
+                            <p>City</p>
+                            <p>: {{city}}</p>
+                          </div> -->
+                          <div class="weekly-data">
+                            <p>{{'Local Time' | translate}}</p>
+                            <p class="time-show">: {{displayTime | translate}}</p>
+                          </div>
+                          <div class="weekly-data" (click)="selectDate()" *ngIf=!showCalendar>
+                              <p>{{'Select Date' | translate}}</p>
+                              <p style="margin-right: 0;">:</p>
+                              <p class="set-date"> {{displayStartDate | translate}} <img src="assets/icon/down-arrow.svg"></p>
+                          </div>
+
+                          <div class="weekly-data" *ngIf=showCalendar>
+                              <p>{{'Select Date' | translate}}</p>
+                              <p>: {{displayStartDate}}</p>
+                              <div class="calander-show" >
+                                  <ion-calendar [(ngModel)]="date"
+                                    (onChange)="onChange($event)"
+                                    [options]="options"
+                                    type="string"
+                                    format="YYYY-MM-DD"
+                                    >
+                                  </ion-calendar>
+                              </div>
+                             
+                          </div>
+                          <!-- code 123 -->
+                          <!-- <ion-row>
+                              <ion-col col-12>
+                                <ion-item  no-padding class="daily-request"> -->
+                                  
+                                  <!-- code123 -->
+                                    <!-- <ion-label>{{'Repeat'| translate}}</ion-label> -->
+                                    
+                                    <!-- <ion-checkbox [ngModel]="isTermsChecked" (ngModelChange)="isTermsChecked=$event.checked" color="dark" name="terms"></ion-checkbox> -->
+                                    <!-- <ion-checkbox *ngIf=isTermsChecked color="dark" checked="true" (ionChange)="toggleTermsAndConditions()" name="terms"></ion-checkbox>
+                                    <ion-checkbox  *ngIf=!isTermsChecked color="dark" checked="false" (ionChange)="toggleTermsAndConditions()" name="terms"></ion-checkbox> -->
+                                   
+                                    <!-- code123 -->
+                                    <!-- <ion-checkbox  *ngIf=isRepeatChecked color="gradiant" name="terms"  checked="true" (ionChange)="onClickRepeat($event)"></ion-checkbox> -->
+                                    <!-- <ion-checkbox *ngIf=!isRepeatChecked color="gradiant" name="terms" checked="false" (ionChange)="onClickRepeat($event)"></ion-checkbox> -->
+                            
+                                    <!-- code123 -->
+                                    <!-- </ion-item>
+                              </ion-col>
+                            </ion-row> -->
+
+                          <!-- <div class="weekly-data">
+                            <p>DST</p>
+                            <p>: {{addDailyRequest?.getDST}}</p>
+                          </div> -->
+                          <div text-justify>
+                            <p>Prediction of event is based on the above Latitude and Longitude. If you change timezone there will be difference in prediction</p>
+                          </div>
+                          <div class="form-group">
+                            <div class="upload-data save-btns">
+                                <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+                              <button ion-button (click)="callCheckDuplicateRequestApi()">{{'Save' | translate}}</button>
+                              <!-- <button ion-button (click)="myclick()">{{'Save' | translate}}</button>     -->
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <!-- <div class="profile-footer">
+          <p><span class="global-img"></span>Headletters... All right reserved</p>
+      </div> -->
+    
+</ion-content>

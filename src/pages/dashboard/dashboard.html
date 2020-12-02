@@ -1,0 +1,164 @@
+<ion-header>
+
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <div class="upload-heading">
+                        <h2 ><span class="upload-view" [ngStyle]="{'background-image': 'url('+userData.getUserPhoto+')'}"></span>{{'Home'
+                            | translate}} <img (click)="changeLang()" class="langimg" src="../../assets/icon/Language.png" /> 
+                            <img (click)="Myths()" class="mythimg" src="../../assets/icon/myths.png" /></h2>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content class="home-page">
+    <ion-grid>
+        <ion-row>
+
+            <ion-col col-12>
+                <div class="home-content">
+                    <div class="home-bg">
+                        <div class="home-inner">
+                            <h2>{{'Welcome to Headletters' | translate}}</h2>
+                            <p>{{'Planetary calculation on charts, Dasas and transits powered by True Astrology software'| translate}}</p>
+
+                        </div>
+                        <div class="services-box">
+
+                            <ion-list>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" (click)="goToHoroscopeServices()">
+                                            <div class="home-payment">
+                                                <img src="assets/images/Services.svg">
+                                                <p>{{'Horoscope Services' | translate}}</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" (click)="goToPayment()">
+                                            <div class="home-payment">
+                                                <img src="assets/images/Payment-icon.svg">
+                                                <p>{{'Payment' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    </ion-label>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" (click)="goToProfile()">
+                                            <div class="home-payment">
+                                                <img src="assets/images/Profile_Update.svg">
+                                                <p>{{'Profile Update' | translate}}</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="prediction" (click)="goToPredictions()">
+                                            <div class="home-payment">
+                                                <img src="assets/icon/prediction.svg">
+                                                <p>{{'Predictions' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    </ion-label>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#">
+                                            <div class="home-payment" (click)="goToMessages()">
+                                                <img src="assets/icon/Messages.svg">
+                                                <p>{{'Messages' | translate}}</p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div (click)="findplace()" class="home-payment">
+                                                <img src="assets/icon/findplace.svg">
+                                                <p>{{'Find Place' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    </ion-label>
+                                </ion-item>
+
+                                <!-- <ion-item>
+                                    <ion-label>
+                                        <a href="#">
+                                            <div class="home-payment" (click)="goToTerms()">
+                                                <img src="assets/icon/Terms-conditions.svg">
+                                                <p>{{'Terms and Conditions' | translate}}</p>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div (click)="callLogoutApi()" class="home-payment">
+                                                <img src="assets/icon/logout.svg">
+                                                <p>{{'Logout' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    </ion-label>
+                                </ion-item> -->
+                            </ion-list>
+                            
+                            <div class="logout-btn">
+                               <a style="width:50%;float:left" (click)="goToTerms()">
+                                <img src="assets/icon/Terms-conditions.svg">
+                                <p>{{'Terms and Conditions' | translate}}</p>
+                               </a>
+
+                               <a (click)="callLogoutApi()">
+                                <img src="assets/icon/logout.svg">
+                                <p>{{'Logout' | translate}}</p>
+                               </a>
+                            </div>
+                            <div class="profile-footer2">
+                                <!-- <p (click)="goToTerms()"><a style="color:blue;text-decoration: underline;">{{'Terms and Conditions' | translate}}</a></p> -->
+                                <p><span class="global-img"></span>{{'Headletters... All rights reserved' | translate}}</p>
+                            </div>
+                            <p class="footer-content">
+                    
+                                ‘{{'Developed by Enuke Software'| translate}}’
+                            </p>
+                            <p class="footer-content">
+                                Version : {{versionNumber}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+            <ion-col col-12>
+                <div class="logout-btn" (click)="callLogoutApi()">
+                    <img src="assets/icon/logout.svg">
+                    <p>{{'Logout' | translate}}</p>
+                </div>
+            </ion-col>
+        </ion-row> -->
+        <!-- <ion-row>
+            <ion-col col-12>
+                <div class="profile-footer2">
+                    <p><span class="global-img"></span>{{'Headletters... All rights reserved' | translate}}</p>
+                </div>
+            </ion-col>
+        </ion-row> -->
+        <!-- <div class="profile-footer2">
+            <p><span class="global-img"></span>{{'Headletters... All rights reserved' | translate}}</p>
+        </div>
+        <ion-row>
+            <ion-col col-12>
+                <p class="footer-content">
+                    
+                    ‘{{'Developed by Enuke Software'| translate}}’
+                </p>
+            </ion-col>
+        </ion-row> -->
+    </ion-grid>
+
+</ion-content>
+<!-- <ion-footer>
+        <ion-toolbar>
+          <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+        </ion-toolbar>
+    </ion-footer> -->
