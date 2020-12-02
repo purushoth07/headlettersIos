@@ -1,0 +1,248 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// html,body {
+//   height: 100%;
+//   width: 100%;
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+// }
+
+// ion-content {
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+// }
+
+// header-ios {
+//  /* Status bar height on iOS 10 */
+//  padding-top: 20px;
+//  /* Status bar height on iOS 11.0 */
+//  padding-top: constant(safe-area-inset-top);
+//  /* Status bar height on iOS 11+ */
+//  padding-top: env(safe-area-inset-top);
+// }
+
+// to handle bounce effect where page content is less than page size
+
+
+.content-ios:not([no-bounce])>.scroll-content::before { 
+  bottom: 0; 
+}
+
+h2 .home-img {
+  width: 30px!important;
+  height: 22px!important;
+  position: absolute!important;
+  right: 16px!important;
+}
+h2 .back-icons {
+  position: absolute!important;
+  left: 6px!important;
+  z-index: 99999999!important;
+  width: 42px !important;
+  top: -10px !important;
+}
+
+.disable-scroll .ion-page {
+  pointer-events: auto;
+}
+
+
+.profile-footer2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  // bottom:10px;
+}
+.profile-footer2 p .global-img{
+  background: url('../assets/icon/copyright.svg') no-repeat 100%/cover;
+  display: block;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+
+}
+.profile-footer2 p {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.error-msg{
+  color: red;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.save-btns button:focus{
+  outline: none;
+}
+.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+  border-bottom-color: #dedede;
+  box-shadow: none;
+}
+
+
+.lpadding{
+  padding-left: 0 !important;
+}
+.rpadding{
+  padding-right: 0 !important;
+}
+// .upload-data.save-btns {
+//   position: fixed;
+//   bottom: 0;
+//   left: 0;
+// }
+.save-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0 5px;
+  z-index: 2;
+
+}
+
+button-ios:focus,
+button-ios:hover
+{
+    color: #F1700A;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+
+.form-group
+{
+  margin-bottom:0;
+}
+// .profile-footer {
+//   position: absolute;
+//   left: 0;
+//   width: 100%;
+//   text-align: center;
+//   z-index: 1;
+// }
+.global-img{
+  background: url('../assets/icon/copyright.svg') no-repeat 100%/cover;
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+
+.error-msg{
+  color: red;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.save-btns button:focus{
+  outline: none!important;
+}
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+  border-bottom-color: #dedede;
+  box-shadow: none;
+}
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+  border-bottom-color: #dedede;
+  box-shadow: none;
+}
+button:focus{
+  outline: none!important;
+  transition:background-color 300ms none!important;
+}
+
+.list-ios > .item-block:first-child
+{
+  border-top:0 none !important;
+}
+
+.list-ios > .item-block:last-child
+{
+  border-bottom:0 none !important;
+}
+
+.alert-ios .alert-button , .alert-md .alert-button{
+  font-weight: normal!important;
+}
+
+.form-data p {
+  position: relative;
+}
+
+.form-data p > img{
+  position: absolute;
+  right: -4px;
+  width: 17px;
+}
+
+// .popover-md .popover-content{
+//   width:300px!important;
+//   left: 50% !important;
+//   transform: translateX(-50%)!important;
+// }
+
+// .popover-ios .popover-content{
+//   width:315px!important;
+//   left: 50% !important;
+//   transform: translateX(-50%)!important;
+// }
+
+/* ---------------- Calendar CSS ----------------- */
+.my-class {
+  .toolbar-background-md, .toolbar-background-ios, ion-calendar-week .week-title {
+    background-color: #424242;
+  }
+
+  .month-box {
+    background: #343434;
+    border-bottom: none;
+    h4 {
+      color: #fff;
+    }
+    button.days-btn > p {
+      color: #fff;
+    }
+  }
+}
+
+.my-cal {
+  button.days-btn.my-day {
+    small {
+      color: #fff;
+      background-color: red;
+    }
+  }
+ 
+ 
+
+// input focus border-bottom color orange global
+
+//  .list-ios > .item-block:last-child .item-inner, .list-ios > .item-wrapper:last-child .item-block .item-inner{
+//      border-bottom: 0.55px solid #c8c7cc!important;
+//   }
+  
+//  .item.item-input.input-has-focus .item-inner{
+//      border-bottom-color: #F27D0B!important;
+//      box-shadow: none;
+//   }
+
+}
+

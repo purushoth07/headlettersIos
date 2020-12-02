@@ -1,0 +1,40 @@
+ <ion-header>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  
+  <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+  <!-- <meta name="google-signin-client_id" content="26260079443-6su5mdpbihhg94omm3ncpqs5o5hdmgdd.apps.googleusercontent.com"> -->
+  </ion-header>
+<!-- <ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+  <div class="outerBorder">
+  <ion-avatar class="image" >
+        <img src="http://cdn-img.instyle.com/sites/default/files/styles/276x276/public/images/2015/06/060315-johnny-depp-lead.jpeg?itok=4p3OUSP3">
+      </ion-avatar>
+      </div>
+
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages icon-left"
+      (click)="openPage(p)">
+
+        <ion-icon name={{p.pic}} style = "margin-right: 15px"></ion-icon>
+        {{p.title}}
+
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu> -->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
