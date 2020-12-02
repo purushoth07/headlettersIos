@@ -1,0 +1,148 @@
+page-prediction-request-list {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+
+    .Predictions {
+        position: relative;
+        padding-bottom: 50px;
+        min-height: 100%;
+    }
+
+    .upload-data.save-btns.prdiction-btns button:last-child {
+        margin-right: 3px;
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .upload-data.save-btns.prdiction-btns button {
+        margin-right: 10px;
+        margin-left: 3px;
+        font-size: 14px;
+        width: 140px;
+        height: 30px;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3);
+        text-transform: capitalize;
+    }
+    .upload-data.save-btns.prdiction-btns {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0 0;
+        background: transparent;
+        position: initial;
+    }
+    .prediction-right h3 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .prediction-right p {
+        color: #33334B;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 7px;
+    }
+    .prediction-left img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .prediction-left {
+        margin-right: 10px;
+    }
+    .prediction-main {
+        display: flex;
+        margin: 20px 0;
+    }
+    .prdiction-content {
+        padding: 0 15px 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    .Predictions .profile-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .Predictions .profile-footer p {
+        margin: 0;
+        padding: 30px 0 20px;
+        text-align: center;
+        color: #444F63;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .Predictions .profile-footer p > img {
+        width: 19px;
+        margin-bottom: 4px;
+    }
+    .prediction-list ion-item{
+        border-bottom: 1px solid #ddd;
+    }
+    .prediction-list ion-item .item-inner{
+        border-bottom: 0!important;
+    }
+    .prediction-detail{
+        display: flex;
+    }   
+    .prediction-detail img {
+        background: #ddd;
+    }
+    .upload-view {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color:#f5a251;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        text-align: center;
+        color: #fff;
+        }
+
+        .upload-data.save-btns.prdiction-btns button:last-child img {
+            width: 13px;
+        }
+        button.delete {
+            width: 140px!important;
+        }
+        .prediction-detail .right-content > p {
+            white-space: pre-line;
+        }
+}
