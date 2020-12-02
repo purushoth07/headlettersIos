@@ -1,0 +1,398 @@
+<!--
+  Generated template for the AddHoroscopePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+          <ion-col col-12 no-padding>
+            <div class="upload-heading">
+                <h2>
+                  <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                  <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right">
+                  {{title | translate}}
+                </h2>
+            </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+      </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="Chart-owner add-horoscope">
+
+        <ion-grid>
+          <ion-row>
+              <ion-col col-12>
+                  <div class="add-profile">
+                    <div class="upload-view" (click)="getImage()" [ngStyle]="{'background-image': 'url('+horoscopeData.getHNativePhoto+')'}" >                              
+                    </div>
+                  
+                     <!-- <img (click)="getImage()" [ngStyle]="{'background-image': 'url('+horoscopeData.getHNativePhoto+')'}"class="img-fluid"> -->
+                     <p>{{'Upload picture of horoscope owner' | translate}}</p>
+                     <div *ngIf=!isValidNativePhoto class="error-msg">{{errorNativeImage}}</div>
+                  </div>
+              </ion-col>
+          </ion-row>
+          
+           <ion-row>
+                 <ion-col col-12>
+                     <div class="upload-content user-info">
+                         <form action="/action_page.php" class="upload-pro">
+                           <ion-item no-padding margin-bottom class="placeholder-color">
+                                  <ion-label stacked>{{'Name' | translate}}</ion-label>
+                                  <ion-input type="text" placeholder="{{'Name' | translate}}"
+                                 [ngModel]="horoscopeData?.getHName" (ngModelChange)="horoscopeData.setHName=$event"  name="name"
+                                 ></ion-input>
+                                 <!-- <ion-input type="text" placeholder="Name"
+                                 [ngModel]="horoscopeData?.getHName" (ngModelChange)="horoscopeData.setHName=$event"  name="name"
+                                 (focus)="notFocused=false" (focusout)="notFocused=true"></ion-input> -->
+                           </ion-item>
+                           <!-- <div *ngIf="!isValidName && notFocused" class="error-msg">{{errorName}}</div> -->
+
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Gender' | translate}}</label>
+                                  <p (click)="selectGender()" *ngIf=!horoscopeData.getHGender>{{'Gender' | translate}}</p>
+                                  <p (click)="selectGender()" *ngIf=horoscopeData.getHGender>{{horoscopeData?.getHGender | translate}}</p>
+                                  <!-- <div *ngIf=!isValidGender class="error-msg">{{errorGender}}</div> -->
+                             </div>
+                           </div>
+
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Birth Date' | translate}}</label>
+                                  <div class="dob-add">
+                                    <p (click)="selectCalendar(1,1)" *ngIf=!ownerDOBCalendar.getSelectedDate>{{'Day' | translate}}</p>
+                                    <p (click)="selectCalendar(1,1)" *ngIf=ownerDOBCalendar.getSelectedDate>{{ownerDOBCalendar?.getSelectedDate}}</p>
+                                    <p (click)="selectCalendar(1,2)" *ngIf=!ownerDOBCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                    <p (click)="selectCalendar(1,2)" *ngIf=ownerDOBCalendar.getSelectedMonth>{{ownerDOBCalendar?.getSelectedMonthName | translate}}</p>
+                                    <p (click)="selectCalendar(1,3)" *ngIf=!ownerDOBCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                    <p (click)="selectCalendar(1,3)" *ngIf=ownerDOBCalendar.getSelectedYear>{{ownerDOBCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidDOBDate class="error-msg">{{errorOwnerDOBDate}}</div>
+                                  <div *ngIf=!isValidDOBMonth class="error-msg">{{errorOwnerDOBMonth}}</div>
+                                  <div *ngIf=!isValidDOBYear class="error-msg">{{errorOwnerDOBYear}}</div> -->
+                             </div>
+                           </div>
+
+
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Time of Birth' | translate}}</label>
+                                  <div class="time-add">
+                                    <p (click)="selectTime(1,1)" *ngIf="!ownerDobTime.getSelectedHour">{{'HH' | translate}}</p>
+                                    <p (click)="selectTime(1,1)" *ngIf="ownerDobTime.getSelectedHour">{{ownerDobTime?.getSelectedHour}}</p>
+                                    <p (click)="selectTime(1,2)" *ngIf="!ownerDobTime.getSelectedMin">{{'MM' | translate}}</p>
+                                    <p (click)="selectTime(1,2)" *ngIf="ownerDobTime.getSelectedMin">{{ownerDobTime?.getSelectedMin}}</p>
+                                    <p (click)="selectTime(1,3)" *ngIf="!ownerDobTime.getSelectedSec">{{'SS' | translate}}</p>
+                                    <p (click)="selectTime(1,3)" *ngIf="ownerDobTime.getSelectedSec">{{ownerDobTime?.getSelectedSec}}</p>
+                                    <p (click)="selectTime(1,4)" *ngIf=!ownerDobTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                    <p (click)="selectTime(1,4)" *ngIf=ownerDobTime.getSelectedAmPm>{{ownerDobTime?.getSelectedAmPm | translate}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidDOBHours class="error-msg">{{errorOwnerDOBHour}}</div>
+                                  <div *ngIf=!isValidDOBMin class="error-msg">{{errorOwnerDOBMin}}</div>
+                                  <div *ngIf=!isValidDOBSec class="error-msg">{{errorOwnerDOBSec}}</div>
+                                  <div *ngIf=!isValidDOBAmpm class="error-msg">{{errorOwnerDOBAmPm}}</div> -->
+                             </div>
+                           </div>
+                          <div class="form-group">
+                           <div class="form-data">
+                                <label>{{'Place, State and Country of Birth' | translate }}</label>
+                               <input type="text" class="form-control" placeholder="{{'Place, State and Country of Birth' | translate }}"
+                               [ngModel]="horoscopeData?.getHPlace" (ngModelChange)="horoscopeData.setHPlace=$event"  name="place_of_birth">
+                               <!-- <div *ngIf=!isValidDOBPlace class="error-msg">{{errorOwnerDOBPlace}}</div> -->
+                           </div>
+                         </div>
+                          <div class="form-group">
+                           <div class="form-data">
+                                <label>{{'Nearest landmark for place of birth (example:hospital etc)' | translate }}</label>
+                               <input type="text" class="form-control" placeholder="{{'Landmark' | translate}}"
+                               [ngModel]="horoscopeData?.getHLandmark" (ngModelChange)="horoscopeData.setHLandmark=$event"  name="landmark">
+                               <!-- <div *ngIf=!isValidLandmark class="error-msg">{{errorOwnerDOBLandmark}}</div> -->
+                              </div>
+                         </div>
+                         <div class="form-group">
+                           <div class="form-data">
+                                <label>{{'Order Of birth (Are you the first or second or ...Child in the family)' | translate }}</label>
+                                    <p (click)="getChildOrder($event)" *ngIf=!childOrder>1</p>
+                                    <p (click)="getChildOrder($event)" *ngIf=childOrder>{{childOrder}}</p>
+                               <!-- <div class="error-msg">Please enter order of birth.</div> -->
+
+                           </div>
+                         </div>
+                         </form>
+                     </div>
+                     <div class="upload-content user-info  Marriage">
+                        <p>{{'Marriage details' | translate }}</p>
+                         <form action="/action_page.php">
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Date of Marriage' | translate }}</label>
+                                  <div class="dob-add">
+                                      <p (click)="selectCalendar(2,1)" *ngIf=!marriageCalendar.getSelectedDate>{{'Day' | translate}}</p>
+                                      <p (click)="selectCalendar(2,1)" *ngIf=marriageCalendar.getSelectedDate>{{marriageCalendar?.getSelectedDate}}</p>
+                                      <p (click)="selectCalendar(2,2)" *ngIf=!marriageCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                      <p (click)="selectCalendar(2,2)" *ngIf=marriageCalendar.getSelectedMonth>{{marriageCalendar?.getSelectedMonthName | translate}}</p>
+                                      <p (click)="selectCalendar(2,3)" *ngIf=!marriageCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                      <p (click)="selectCalendar(2,3)" *ngIf=marriageCalendar.getSelectedYear>{{marriageCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidMarriageDate class="error-msg">{{errorMarriageDate}}</div>
+                                  <div *ngIf=!isValidMarriageMonth class="error-msg">{{errorMarriageMonth}}</div>
+                                  <div *ngIf=!isValidMarriageYear class="error-msg">{{errorMarriageYear}}</div> -->
+                             </div>
+                           </div>
+                            <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Time of Marriage'| translate}}</label>
+                                  <div class="time-add">
+                                      <p (click)="selectTime(2,1)" *ngIf="!marriageTime.getSelectedHour">{{'HH' | translate}}</p>
+                                      <p (click)="selectTime(2,1)" *ngIf="marriageTime.getSelectedHour">{{marriageTime?.getSelectedHour}}</p>
+                                      <p (click)="selectTime(2,2)" *ngIf="!marriageTime.getSelectedMin">{{'MM' | translate}}</p>
+                                      <p (click)="selectTime(2,2)" *ngIf="marriageTime.getSelectedMin">{{marriageTime?.getSelectedMin}}</p>
+                                      <p (click)="selectTime(2,3)" *ngIf="!marriageTime.getSelectedSec">{{'SS' | translate}}</p>
+                                      <p (click)="selectTime(2,3)" *ngIf="marriageTime.getSelectedSec">{{marriageTime?.getSelectedSec}}</p>
+                                      <p (click)="selectTime(2,4)" *ngIf=!marriageTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                      <p (click)="selectTime(2,4)" *ngIf=marriageTime.getSelectedAmPm>{{marriageTime?.getSelectedAmPm | translate}}</p>
+                                      
+                                    </div>
+                                    <!-- <div *ngIf=!isValidMarriageHours class="error-msg">{{errorMarriageHour}}</div>
+                                    <div *ngIf=!isValidMarriageMin class="error-msg">{{errorMarriageMin}}</div>
+                                    <div *ngIf=!isValidMarriageSec class="error-msg">{{errorMarriageSec}}</div>
+                                    <div *ngIf=!isValidMarriageAmpm class="error-msg">{{errorMarriageAmPm}}</div> -->
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Place, State and Country of Marriage' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Place, State and Country of Marriage' | translate}}"
+                                  [ngModel]="horoscopeData?.getHMarriagePlace" (ngModelChange)="horoscopeData.setHMarriagePlace=$event"  name="place_of_marriage">
+                             </div>
+                           </div>
+                         </form>
+                     </div>
+                      <div class="upload-content user-info  Marriage">
+                        <p>{{'First Child (if applicable)' | translate}}</p>
+                         <form action="/action_page.php">
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Birth Date' | translate}}</label>
+                                  <div class="dob-add">
+                                      <p (click)="selectCalendar(6,1)" *ngIf=!childCalendar?.getSelectedDate>{{'Day' | translate}}</p>
+                                      <p (click)="selectCalendar(6,1)" *ngIf=childCalendar.getSelectedDate>{{childCalendar?.getSelectedDate}}</p>
+                                      <p (click)="selectCalendar(6,2)" *ngIf=!childCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                      <p (click)="selectCalendar(6,2)" *ngIf=childCalendar.getSelectedMonth>{{childCalendar?.getSelectedMonthName | translate}}</p>
+                                      <p (click)="selectCalendar(6,3)" *ngIf=!childCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                      <p (click)="selectCalendar(6,3)" *ngIf=childCalendar.getSelectedYear>{{childCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidChildBirthDate class="error-msg">{{errorChildBirthDate}}</div>
+                                  <div *ngIf=!isValidChildBirthMonth class="error-msg">{{errorChildBirthMonth}}</div>
+                                  <div *ngIf=!isValidChildBirthYear class="error-msg">{{errorChildBirthYear}}</div> -->
+                             </div>
+                           </div>
+                            <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Time of Birth' | translate}}</label>
+                                  <div class="time-add">
+                                      <p (click)="selectTime(6,1)" *ngIf="!childTime.getSelectedHour">{{'HH' | translate}}</p>
+                                      <p (click)="selectTime(6,1)" *ngIf="childTime.getSelectedHour">{{childTime?.getSelectedHour}}</p>
+                                      <p (click)="selectTime(6,2)" *ngIf="!childTime.getSelectedMin">{{'MM' | translate}}</p>
+                                      <p (click)="selectTime(6,2)" *ngIf="childTime.getSelectedMin">{{childTime?.getSelectedMin}}</p>
+                                      <p (click)="selectTime(6,3)" *ngIf="!childTime.getSelectedSec">{{'SS' | translate}}</p>
+                                      <p (click)="selectTime(6,3)" *ngIf="childTime.getSelectedSec">{{childTime?.getSelectedSec}}</p>
+                                      <p (click)="selectTime(6,4)" *ngIf=!childTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                      <p (click)="selectTime(6,4)" *ngIf=childTime.getSelectedAmPm>{{childTime?.getSelectedAmPm | translate}}</p>
+                                      
+                                    </div>
+                                    <!-- <div *ngIf=!isValidChildBirthHours class="error-msg">{{errorChildBirthHour}}</div>
+                                    <div *ngIf=!isValidChildBirthMin class="error-msg">{{errorChildBirthMin}}</div>
+                                    <div *ngIf=!isValidChildBirthSec class="error-msg">{{errorChildBirthSec}}</div>
+                                    <div *ngIf=!isValidChildBirthAmpm class="error-msg">{{errorChildBirthAmPm}}</div> -->
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Place, State and Country of Birth' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Place, State and Country of Birth' | translate}}"
+                                  [ngModel]="horoscopeData?.getHFirstChildPlace" (ngModelChange)="horoscopeData.setHFirstChildPlace=$event"  name="place_of_child_birth">
+                             </div>
+                           </div>
+                         </form>
+                     </div>
+                     <div class="upload-content user-info  Marriage">
+                        <p>{{'Abroad travel date (if any)' | translate}}</p>
+                         <form action="/action_page.php">
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Date of Travel' | translate}}</label>
+                                  <div class="dob-add">
+                                      <p (click)="selectCalendar(3,1)" *ngIf=!travelCalendar.getSelectedDate>{{'Day' | translate}}</p>
+                                      <p (click)="selectCalendar(3,1)" *ngIf=travelCalendar.getSelectedDate>{{travelCalendar?.getSelectedDate}}</p>
+                                      <p (click)="selectCalendar(3,2)" *ngIf=!travelCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                      <p (click)="selectCalendar(3,2)" *ngIf=travelCalendar.getSelectedMonth>{{travelCalendar?.getSelectedMonthName | translate}}</p>
+                                      <p (click)="selectCalendar(3,3)" *ngIf=!travelCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                      <p (click)="selectCalendar(3,3)" *ngIf=travelCalendar.getSelectedYear>{{travelCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidTravelDate class="error-msg">{{errorTravelDate}}</div>
+                                  <div *ngIf=!isValidTravelMonth class="error-msg">{{errorTravelMonth}}</div>
+                                  <div *ngIf=!isValidTravelYear class="error-msg">{{errorTravelYear}}</div> -->
+                              </div>
+                           </div>
+                            <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Approximate take off time' | translate}}</label>
+                                  <div class="time-add">
+                                      <p (click)="selectTime(3,1)" *ngIf="!travelTime.getSelectedHour">{{'HH' | translate}}</p>
+                                      <p (click)="selectTime(3,1)" *ngIf="travelTime.getSelectedHour">{{travelTime?.getSelectedHour}}</p>
+                                      <p (click)="selectTime(3,2)" *ngIf="!travelTime.getSelectedMin">{{'MM' | translate}}</p>
+                                      <p (click)="selectTime(3,2)" *ngIf="travelTime.getSelectedMin">{{travelTime?.getSelectedMin}}</p>
+                                      <p (click)="selectTime(3,3)" *ngIf="!travelTime.getSelectedSec">{{'SS' | translate}}</p>
+                                      <p (click)="selectTime(3,3)" *ngIf="travelTime.getSelectedSec">{{travelTime?.getSelectedSec}}</p>
+                                      <p (click)="selectTime(3,4)" *ngIf=!travelTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                      <p (click)="selectTime(3,4)" *ngIf=travelTime.getSelectedAmPm>{{travelTime?.getSelectedAmPm | translate}}</p>
+                                      
+                                    </div>
+                                    <!-- <div *ngIf=!isValidTravelHours class="error-msg">{{errorTravelHour}}</div>
+                                    <div *ngIf=!isValidTravelMin class="error-msg">{{errorTravelMin}}</div>
+                                    <div *ngIf=!isValidTravelSec class="error-msg">{{errorTravelSec}}</div>
+                                    <div *ngIf=!isValidTravelAmpm class="error-msg">{{errorTravelAmPm}}</div> -->
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Where did you travel from (City, State and Country)' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Where did you travel from (City, State and Country)' | translate}}"
+                                  [ngModel]="horoscopeData?.getHAtPlace" (ngModelChange)="horoscopeData.setHAtPlace=$event"  name="travel_from">
+                             </div>
+                           </div>
+                         </form>
+                     </div>
+                     <div class="upload-content user-info  Marriage">
+                        <p>{{'Last call or Whatsapp Message or SMS received date' | translate}}</p>
+                         <form action="/action_page.php">
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Date of receipt' | translate}}</label>
+                                  <div class="dob-add">
+                                      <p (click)="selectCalendar(4,1)" *ngIf=!lastCallCalendar.getSelectedDate>{{'Day' | translate}}</p>
+                                      <p (click)="selectCalendar(4,1)" *ngIf=lastCallCalendar.getSelectedDate>{{lastCallCalendar?.getSelectedDate}}</p>
+                                      <p (click)="selectCalendar(4,2)" *ngIf=!lastCallCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                      <p (click)="selectCalendar(4,2)" *ngIf=lastCallCalendar.getSelectedMonth>{{lastCallCalendar?.getSelectedMonthName | translate}}</p>
+                                      <p (click)="selectCalendar(4,3)" *ngIf=!lastCallCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                      <p (click)="selectCalendar(4,3)" *ngIf=lastCallCalendar.getSelectedYear>{{lastCallCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidCallDate class="error-msg">{{errorCallDate}}</div>
+                                  <div *ngIf=!isValidCallMonth class="error-msg">{{errorCallMonth}}</div>
+                                  <div *ngIf=!isValidCallYear class="error-msg">{{errorCallYear}}</div> -->
+                             </div>
+                           </div>
+                            <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Exact Time of receipt' | translate}}</label>
+                                  <div class="time-add">
+                                      <p (click)="selectTime(4,1)" *ngIf="!callTime.getSelectedHour">{{'HH' | translate}}</p>
+                                      <p (click)="selectTime(4,1)" *ngIf="callTime.getSelectedHour">{{callTime?.getSelectedHour}}</p>
+                                      <p (click)="selectTime(4,2)" *ngIf="!callTime.getSelectedMin">{{'MM' | translate}}</p>
+                                      <p (click)="selectTime(4,2)" *ngIf="callTime.getSelectedMin">{{callTime?.getSelectedMin}}</p>
+                                      <p (click)="selectTime(4,3)" *ngIf="!callTime.getSelectedSec">{{'SS' | translate}}</p>
+                                      <p (click)="selectTime(4,3)" *ngIf="callTime.getSelectedSec">{{callTime?.getSelectedSec}}</p>
+                                      <p (click)="selectTime(4,4)" *ngIf=!callTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                      <p (click)="selectTime(4,4)" *ngIf=callTime.getSelectedAmPm>{{callTime?.getSelectedAmPm | translate}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidCallHours class="error-msg">{{errorCallHour}}</div>
+                                  <div *ngIf=!isValidCallMin class="error-msg">{{errorCallMin}}</div>
+                                  <div *ngIf=!isValidCallSec class="error-msg">{{errorCallSec}}</div>
+                                  <div *ngIf=!isValidCallAmpm class="error-msg">{{errorCallAmPm}}</div> -->
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Place, State and Country where received' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Place, State and Country where received' | translate}}"
+                                  [ngModel]="horoscopeData?.getHCrPlace" (ngModelChange)="horoscopeData.setHCrPlace=$event"  name="place of_last_call">
+                             </div>
+                           </div>
+                         </form>
+                     </div>
+                     <div class="upload-content user-info  Marriage place-event">
+                        <p>{{'Demise of close relatives (if applicable)' | translate}}</p>
+                         <form action="/action_page.php">
+                          <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Relationship with chart owner (example: father, mother)' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Father' | translate}}"
+                                  [ngModel]="horoscopeData?.getHDrr" (ngModelChange)="horoscopeData.setHDrr=$event"  name="reationship">
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Date of event' | translate}}</label>
+                                  <div class="dob-add">
+                                      <p (click)="selectCalendar(5,1)" *ngIf=!demiseCalendar.getSelectedDate>{{'Day' | translate}}</p>
+                                      <p (click)="selectCalendar(5,1)" *ngIf=demiseCalendar.getSelectedDate>{{demiseCalendar?.getSelectedDate}}</p>
+                                      <p (click)="selectCalendar(5,2)" *ngIf=!demiseCalendar.getSelectedMonth>{{'Month' | translate}}</p>
+                                      <p (click)="selectCalendar(5,2)" *ngIf=demiseCalendar.getSelectedMonth>{{demiseCalendar?.getSelectedMonthName | translate}}</p>
+                                      <p (click)="selectCalendar(5,3)" *ngIf=!demiseCalendar.getSelectedYear>{{'Year' | translate}}</p>
+                                      <p (click)="selectCalendar(5,3)" *ngIf=demiseCalendar.getSelectedYear>{{demiseCalendar?.getSelectedYear}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidDemiseDate class="error-msg">{{errorDemiseDate}}</div>
+                                  <div *ngIf=!isValidDemiseMonth class="error-msg">{{errorDemiseMonth}}</div>
+                                  <div *ngIf=!isValidDemiseYear class="error-msg">{{errorDemiseYear}}</div> -->
+                             </div>
+                           </div>
+                            <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Approximate Time of Event' | translate}}</label>
+                                  <div class="time-add">
+                                      <p (click)="selectTime(5,1)" *ngIf="!demiseTime.getSelectedHour">{{'HH' | translate}}</p>
+                                      <p (click)="selectTime(5,1)" *ngIf="demiseTime.getSelectedHour">{{demiseTime?.getSelectedHour}}</p>
+                                      <p (click)="selectTime(5,2)" *ngIf="!demiseTime.getSelectedMin">{{'MM' | translate}}</p>
+                                      <p (click)="selectTime(5,2)" *ngIf="demiseTime.getSelectedMin">{{demiseTime?.getSelectedMin}}</p>
+                                      <p (click)="selectTime(5,3)" *ngIf="!demiseTime.getSelectedSec">{{'SS' | translate}}</p>
+                                      <p (click)="selectTime(5,3)" *ngIf="demiseTime.getSelectedSec">{{demiseTime?.getSelectedSec}}</p>
+                                      <p (click)="selectTime(5,4)" *ngIf=!demiseTime.getSelectedAmPm>{{'AM/PM' | translate}}</p>
+                                      <p (click)="selectTime(5,4)" *ngIf=demiseTime.getSelectedAmPm>{{demiseTime?.getSelectedAmPm | translate}}</p>
+                                  </div>
+                                  <!-- <div *ngIf=!isValidDemiseHours class="error-msg">{{errorDemiseHour}}</div>
+                                  <div *ngIf=!isValidDemiseMin class="error-msg">{{errorDemiseMin}}</div>
+                                  <div *ngIf=!isValidDemiseSec class="error-msg">{{errorDemiseSec}}</div>
+                                  <div *ngIf=!isValidDemiseAmpm class="error-msg">{{errorDemiseAmPm}}</div> -->
+                             </div>
+                           </div>
+                           <div class="form-group">
+                             <div class="form-data">
+                                  <label>{{'Place, State and Country of event' | translate}}</label>
+                                  <input type="text" class="form-control" placeholder="{{'Place, State and Country of event' | translate}}"
+                                  [ngModel]="horoscopeData?.getHDrrP" (ngModelChange)="horoscopeData.setHDrrP=$event"  name="place of_event">
+                             </div>
+                           </div>
+                         </form>
+                     </div>
+                     
+                     <div class="form-group" >
+                       <div class="upload-data save-btns upload-data-btns">
+                         <button ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+                         <button ion-button (click)="saveProfile('1')">{{'Save' | translate}}</button>
+                       </div>
+                     </div>
+                  </ion-col>
+            </ion-row>
+
+          <!-- <div class="profile-footer">
+             <p><span class="global-img"></span> Headletters... all right reserved</p>
+          </div> -->
+      </ion-grid>
+
+
+</ion-content>
+<ion-footer class="upload-data-btns" [hidden]=true>
+    <ion-toolbar>
+      <button ion-button (click)="saveProfile('1')">{{'Save' | translate}}</button>
+      <button  ion-button (click)="onBackPressed()">{{'Cancel' | translate}}</button>
+    </ion-toolbar>
+  </ion-footer>
