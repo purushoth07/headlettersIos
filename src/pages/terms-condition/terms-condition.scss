@@ -1,0 +1,114 @@
+page-terms-condition {
+
+    .toolbar-background{
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .ion-toolbar{
+        position: relative;
+    }
+    .lpadding{
+        padding-left: 0!important;
+    }
+    .rpadding{
+        padding-right: 0!important;
+    }
+    .upload-heading h2{
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+
+    ion-footer{
+        text-align: center;
+    }
+
+    .policy-section h2{
+        margin-top: 0;
+    }
+
+    .terms-content{
+        color: #33334B;
+        opacity: .86;
+        font-size: 14px;
+    }
+
+    .new-profile {
+        text-align: left;
+        margin-top: 8px;
+    }
+
+    .upload-data-btns button {
+        padding: 8px;
+        width: 40%;
+        height: 40px;
+        border: 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -webkit-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -moz-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        background-image: -ms-linear-gradient(to right, #f2880a, #f27901, #f26800, #f25503, #f13f0b);
+        }
+
+    button.disagree 
+    {
+        background: #010101!important;
+    }
+
+    button.disagree.button-md
+    {
+        text-transform: capitalize;
+    } 
+
+    button.agree.button-md
+    {
+        text-transform: capitalize;
+    } 
+
+    .terms-footer button img {
+        height: 28px;
+        margin-right: 10px;
+    }
+    .upload-data-btns{
+    position: fixed;
+    }
+    .terms-condition button:focus{
+    outline: none;
+    }
+    
+    .upload-data-btns button:focus{
+    outline: none;
+    }
+    .upload-data-btns .toolbar-background {
+    background-image: none !important;
+    }
+
+    .term-condition-wrapper {
+        padding: 0 20px;
+        margin-top:25px;
+        margin-bottom:25px;
+        overflow: scroll;
+        height:100vh;
+    }
+
+    // .term-condition-wrapper h1
+    // {
+    //     margin-top:10px;
+    // }
+
+    .scroll-content
+    {
+        margin-top: 46px!important;
+    }
+}

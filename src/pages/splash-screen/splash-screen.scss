@@ -1,0 +1,13 @@
+page-splash-screen {
+
+    // .scroll-content {
+    //     background: url(../assets/images/splash.png);
+    //   }
+    .bg-image{
+        min-height: 100%;
+        background-image:url(../assets/images/splash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+}
