@@ -1,0 +1,109 @@
+page-payment-record-list {
+    .toolbar-background {
+        background-image: linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c)!important;
+        background-image: -webkit-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -moz-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+        background-image: -ms-linear-gradient(to right, #f2b509, #f49b00, #f58000, #f46100, #f13b0c);
+    }
+    .lpadding {
+        padding-left: 0!important;
+    }
+    .rpadding {
+        padding-right: 0!important;
+    }
+    .upload-heading h2 {
+        margin: 0;
+        color: #fff;
+        // padding: 20px;
+        font-size: 16px;
+        // -webkit-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // -moz-box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        // box-shadow: 0px 7px 20px -8px rgba(0,0,0,0.51);
+        text-align: center;
+        // position: relative;
+    }
+
+    .record-data {
+        display: flex;
+        position: relative;
+    }
+    .pay-record .record-data:first-child {
+        // border-bottom: 1px solid rgba(68, 79, 99, 0.54);
+        color: #444F63;
+        // margin-bottom: 10px;
+        // padding-bottom: 10px;
+    }
+    .record-data:first-child p,
+    .record-data:last-child p {
+        font-size: 14px;
+    }
+    .record-data p {
+        margin: 5px 0;
+        color: #444F63;
+        font-size: 13px;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    .record-data p:last-child {
+        margin-left: 5px;
+    }
+    .pay-record .record-data:last-child {
+        border-top: 1px solid rgba(68, 79, 99, 0.54);
+        color: #444F63;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .pay-record {
+        padding: 15px 14px 13px;
+        box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: 5px 5px 10px;
+    }
+    .status {
+        color: #00E11E !important;
+    }
+    .status-cancel {
+        color: red !important;
+    }
+    .grid-p{
+        padding: 0 5px;
+    }
+    img.arrow-right {
+        position: absolute;
+        right: 0;
+        width: 21px;
+        top: 14px;
+    
+    }
+    .more-text{
+        position: absolute;
+        right: 25px;
+        top:14px;
+        
+    }
+    img.arrow-up {
+        position: absolute;
+        right: 0;
+        width: 21px;
+        top: 14px;
+        transform: rotate(-90deg);
+    
+    }
+    .list-details ion-item ion-label{
+        margin: 0!important;
+    }
+    .list-details ion-item  .item-inner{
+        padding-right: 0!important;
+        border: 0!important;
+    }
+    .record-data.refrence {
+        display: inherit;
+    }
+    .record-data.refrence p:first-child {
+        white-space: inherit;
+    }
+    .record-data.refrence p:last-child {
+        margin-left: 0;
+        white-space: pre-line;
+    }
+}

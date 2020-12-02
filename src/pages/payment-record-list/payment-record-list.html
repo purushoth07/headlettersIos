@@ -1,0 +1,124 @@
+<!--
+  Generated template for the PaymentRecordListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <div class="upload-heading">
+                        <h2>
+                            <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                            <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img"> {{'Payment Records'
+                            | translate}}
+                        </h2>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="grid-p">
+        <ion-row>
+            <ion-col col-12>
+                <ion-list class="list-details scroll">
+                    <ion-item no-padding *ngFor="let item of paymentRecordList">
+                        <div class="pay-record">
+                            <!-- code123 -->
+                            <!-- <div class="record-data">
+                                <p>{{'Invoice date' | translate}} :</p>
+                                <p> {{ item.getdisplayInvoiceDateToShow(translate,platform) }}</p>
+                            </div>
+                            <div class="record-data">
+                                <p>{{'Total invoice amount'| translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item.getTOTALINVOICEAMOUNT}}</p>
+                            </div>
+                            <div class="record-data">
+                                <p>{{'Paid date'| translate}} :</p>
+                                <p> {{ item.getdisplayPaidDateToShow(translate,platform) }}</p>
+                            </div>
+                            <div class="record-data refrence" *ngIf=!item.isCollapsed>
+                                <p>{{'Payment link reference number' | translate}} :</p>
+                                <p (click)="openPaymentLink(item)"><a href="#">{{ item.getPAYMENTLINKREFNUMBER }}</a></p>
+                            </div>
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                <p>{{'Paypal reference number'| translate}} :</p>
+                                <p> {{ item.getPPREFNUMBER }}</p>
+                            </div>
+                             -->
+
+                            <!-- <div class="record-data" *ngIf=!item.isCollapsed>
+                                <p>{{'Paid amount' | translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item.getPAIDAMOUNT}}</p>
+                            </div> -->
+                            
+                            <!-- code123 -->
+                            <!-- <div class="record-data" *ngIf=!item.isCollapsed>
+                                <p>{{'Request Amount' | translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item?.getTopUp}}</p>
+                            </div>
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                <p>{{'Taxes' | translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item?.getTaxes}}</p>
+                            </div>
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                <p>{{'Service Charge' | translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item?.getServiceCharge}}</p>
+                            </div> -->
+                            
+                            <div class="record-data">
+                                <p>{{'Invoice date' | translate}} :</p>
+                                <p> {{ item.getdisplayInvoiceDateToShow(translate,platform) }}</p>
+                            </div>
+                            
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                    <p>{{'Paypal reference number'| translate}} :</p>
+                                    <p> {{ item.getPPREFNUMBER }}</p>
+                            </div>
+                            <div class="record-data" >
+                                <p>{{'Request Amount' | translate}} :</p>
+                                <p><span>{{item.getCurrencySign}} </span>{{item?.getTopUp}}</p>
+                            </div>
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                    <p>{{'Taxes' | translate}} :</p>
+                                    <p><span>{{item.getCurrencySign}} </span>{{item?.getTaxes}}</p>
+                            </div>
+                            <div class="record-data" *ngIf=!item.isCollapsed>
+                                    <p>{{'Service Charge' | translate}} :</p>
+                                    <p><span>{{item.getCurrencySign}} </span>{{item?.getServiceCharge}}</p>
+                            </div>
+                            <div class="record-data">
+                                    <p>{{'Total invoice amount'| translate}} :</p>
+                                    <p><span>{{item.getCurrencySign}} </span>{{item.getTOTALINVOICEAMOUNT}}</p>
+                            </div>
+                            <div class="record-data"*ngIf=!item.isCollapsed>
+                                    <p>{{'Paid date'| translate}} :</p>
+                                    <p> {{ item.getdisplayPaidDateToShow(translate,platform) }}</p>
+                            </div>
+                            <div class="record-data refrence" *ngIf=!item.isCollapsed>
+                                    <p>{{'Payment link reference number' | translate}} :</p>
+                                    <p (click)="openPaymentLink(item)"><a href="#">{{ item.getPAYMENTLINKREFNUMBER }}</a></p>
+                            </div>
+
+                            <div class="record-data" (click)="expand(item)">
+                                <p>{{'Paid status'| translate}} :</p>
+                                <p class="status" *ngIf="item.getPAIDSTATUS ==='Yes'" > {{item.getPAIDSTATUS | translate}}</p>
+                                <p *ngIf="item.getPAIDSTATUS ==='No'"> {{item.getPAIDSTATUS | translate}}</p>
+                                <p class="status-cancel" *ngIf="item.getPAIDSTATUS ==='Cancel'"> {{item.getPAIDSTATUS | translate}}</p>
+                                <p *ngIf="item.isCollapsed" class="more-text" >{{'More' | translate}}</p>
+                                <p *ngIf=!item.isCollapsed class="more-text" >{{'Less' | translate}}</p>
+                                <img *ngIf=item.isCollapsed src="assets/icon/right.png" alt="" class="arrow-right" >
+                                <img *ngIf=!item.isCollapsed src="assets/icon/right.png" alt="" class="arrow-up" >
+                            </div>
+                        </div>                      
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

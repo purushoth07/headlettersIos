@@ -1,0 +1,81 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <div class="upload-heading">
+                        <h2>
+                            <img (click)="onBackPressed()" src="assets/icon/arrow_back.svg" class="back-icons">
+                            <img (click)="onHomePressed()" src="assets/icon/home-icon.svg" class="home-img float-right"> {{'Payment'
+                            | translate}}
+                        </h2>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="home-page payment">
+
+
+    <ion-grid>
+
+        <ion-row>
+            <ion-col col-12>
+                <div class="home-content home-new">
+                    <div class="home-bg">
+                        <div class="home-inner">
+                            <h2>{{'Welcome to Headletters' | translate}}</h2>
+                            <p>{{'Planetary calculation on charts, Dasas and transits powered by True Astrology software'| translate}}</p>
+                        </div>
+                        <div class="services-box">
+
+                            <ion-list>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" (click)="goToPay()">
+                                            <div class="home-payment">
+                                                <img src="assets/icon/pay.svg">
+                                                <p>{{'Pay' | translate}}</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" (click)="goToBalance()">
+                                            <div class="home-payment">
+                                                <img src="assets/images/Payment-icon.svg">
+                                                <p>{{'Balance' | translate}}</p>
+                                            </div>
+                                        </a>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-list>
+                            <div class="logout-btn" (click)="goToPaymentRecord()">
+                                <img src="assets/icon/payment-record.svg">
+                                <p>{{'Payment Records' | translate}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+    <!-- <div class="profile-footer2">
+        <p><span class="global-img"></span>Headletters... All right reserved</p>
+    </div> -->
+</ion-content>
+<!-- <ion-footer>
+    <ion-toolbar>
+      <ion-title><img src="assets/icon/copyright.svg">Headletters... All right reserved</ion-title>
+    </ion-toolbar>
+  </ion-footer> -->

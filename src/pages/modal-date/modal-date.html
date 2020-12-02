@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ModalDatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>ModalDatePage</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content class="ur-balance">
+
+    <div class="popup-month" >
+        <div class="dob-add">
+          <p (click)="showStatmentCalendarList(2)" >{{'Month' | translate}} <img src="assets/icon/down-arrow.svg"></p>
+          <p (click)="showStatmentCalendarList(2)">{{statementCalendar?.getSelectedMonthName | translate}} <img src="assets/icon/down-arrow.svg"></p>
+          <p (click)="showStatmentCalendarList(3)" >{{'Year' | translate}}<img src="assets/icon/down-arrow.svg"></p>
+          <p (click)="showStatmentCalendarList(3)" >{{statementCalendar?.getSelectedYear}} <img src="assets/icon/down-arrow.svg"></p>
+        </div>
+    
+        <div class="cancel-btns">
+          <button ion-button color="light" (click)="statementDialog(1)">{{'Cancel' | translate}}</button>
+          <button ion-button color="light" (click)="sendStatement()">{{'Ok' | translate}}</button>
+        </div>
+      </div>
+</ion-content>
+<!-- <ion-content class="main-view">
+    <div class="overlay" (click)="dismiss()"></div>
+    <div class="modal_content">
+      <h2>Welcome to Ionic!</h2>
+      <p>
+        This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+      </p>
+      <p>
+        Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new
+        pages.
+      </p>
+    </div>
+  </ion-content> -->
